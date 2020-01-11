@@ -1,0 +1,372 @@
+<html><head><link rel="stylesheet" type="text/css" href="http://webapi.amap.com/theme/v1.3/style1536672475627.css"><style type="text/css">.amap-call,.amap-lib-driving .planTitle .clearfix a{text-decoration:underline}.amap-lib-driving{margin:0;padding:0;color:#565656;font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12px;line-height:1.5;word-wrap:break-word;background-color:#fff;border:1px solid silver}.amap-lib-driving ol,.amap-lib-driving ul{list-style:none;margin:0;padding:0}.amap-call{font-size:12px;color:#fafafa;cursor:pointer;background-color:#bbb;text-align:right;padding:3px 8px 1px 3px}.amap-lib-driving .blue{color:#3d93fd}.amap-lib-driving p{margin:0}.amap-lib-driving b,.amap-lib-driving strong{font-weight:700}.amap-lib-driving dt{cursor:pointer}.amap-lib-driving .planTitle{position:relative;padding:2px 8px;border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;background:#fafafa;font-size:14px;cursor:pointer}.amap-lib-driving .planTitle:hover{background:#fff}.amap-lib-driving .planTitle.current .sidebar,.amap-lib-driving .planTitle:hover .sidebar{display:block}.amap-lib-driving .planTitle span.red{color:#ff4546}.amap-lib-driving .planTitle h3{margin-top:0;font-size:13px;margin-bottom:1px}.amap-lib-driving .planTitle p{font-size:12px;margin-bottom:1px;color:#666}.amap-lib-driving .planTitle ul{display:none;margin-top:3px}.amap-lib-driving .planTitle ul li{float:left}.amap-lib-driving .planTitle ul li:last-child{border-right:none}.amap-lib-driving .planTitle ul li a{background-repeat:no-repeat;color:#00f;font-size:12px;height:16px;line-height:16px;padding-right:8px;text-indent:20px}.amap-lib-driving .planTitle ul li a.icon-share{padding-left:0;background-position:0 center}.amap-lib-driving .icon-arrow-up{background-image:url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/arrow-up.png)}.amap-lib-driving .planTitle .sidebar{display:none;position:absolute;width:30px;height:30px;top:50%;right:0;pointer-events:none;margin-top:-15px}.amap-lib-driving .planTitle .sidebar div{display:block;width:100%;height:100%;background-repeat:no-repeat;background-position:center center;transition:all .3s ease-in 0s;-webkit-transition:all .3s ease-in 0s;-moz-transition:all .3s ease-in 0s;background-image:url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/arrow-down.png)}.amap-lib-driving .planTitle .sidebar div.expand{background-image:url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/arrow-up.png)}.amap-lib-driving .plan{display:none;font-size:12px;margin:0}.amap-lib-driving .plan .grey{color:#999}.amap-lib-driving .plan .blue{color:#3baeca}.amap-lib-driving .plan dt{position:relative;margin-left:35px;line-height:20px;border-bottom:1px solid #f0f0f0;padding-bottom:3px;padding-top:3px}.amap-lib-driving .plan dt:hover{background:#fafafa}.amap-lib-driving .plan dt span.grey{font-weight:400}.amap-lib-driving .plan dt span.line{padding-left:5px;padding-right:5px;display:inline-block;line-height:22px;color:#fff;background:#3baeca;text-indent:0}.amap-lib-driving .plan dt:first-child{border-top:1px solid #f0f0f0}.amap-lib-driving .plan dt .beforedt{left:-30px;border-radius:50%;background-color:#fff;background-position:center;background-repeat:no-repeat;text-indent:0;text-align:center;font-size:12px;z-index:10}.amap-lib-driving .beforedt{top:15px;left:-22px;height:100%;width:4px;z-index:-1;position:absolute;background-color:#e5e7e8}.amap-lib-driving .plan dt.end,.amap-lib-driving .plan dt.start,.amap-lib-driving .plan dt.via{font-size:14px}.amap-lib-driving .plan dt.end .beforedt,.amap-lib-driving .plan dt.start .beforedt,.amap-lib-driving .plan dt.via .beforedt{margin-top:-10px;width:20px;height:20px;line-height:20px;color:#FFF;background-image:url(http://webapi.amap.com/theme/v1.3/images/newpc/diricon.png)}.amap-lib-driving .plan dt.start .beforedt{background-position:-47px -104px}.amap-lib-driving .plan dt.via .beforedt{background-position:-85px -104px}.amap-lib-driving .plan dt.end .beforedt{background-position:-126px -104px}.amap-lib-driving .plan dt.end .afterdt{height:0%}.amap-lib-driving .afterdt{position:absolute;background-color:#e5e7e8;left:-22px;top:20px;height:500px;width:4px;z-index:9}.amap-lib-driving>.plan dt>.afterdt{height:100%}.amap-lib-driving .plan dt.walk .beforedt{left:-27px;width:10px;height:10px;margin-top:-6px;border:2px solid #ddd}.amap-lib-driving .plan dt.bus .beforedt,.amap-lib-driving .plan dt.subway .beforedt{left:-31px;width:24px;height:24px;margin-top:-12px;background-image:url(http://webapi.amap.com/theme/v1.3/images/newpc/diricon.png)}.amap-lib-driving .plan dt.bus .afterdt{background-color:#33a7ff}.amap-lib-driving .plan dt.subway .afterdt{background-color:#3baeca}.amap-lib-driving .plan dt.bus .beforedt{background-position:-164px -102px}.amap-lib-driving .plan dt.subway .beforedt{background-position:-243px -101px}.amap-lib-driving .plan-nobus{margin:0}.amap-lib-driving .plan-nobus dt span{display:block;line-height:18px}.amap-lib-driving .plan-nobus dt .beforedt{left:-31px;width:21px;height:21px;margin-top:-12px;border:1px solid #ddd;background-image:url(http://webapi.amap.com/theme/v1.3/images/newpc/diricon.png)}.amap-lib-driving .plan-nobus dt.end .beforedt,.amap-lib-driving .plan-nobus dt.start .beforedt,.amap-lib-driving .plan-nobus dt.via .beforedt{border:none}.amap-lib-driving .plan-nobus dt.turn-go .beforedt{background-image:url(http://webapi.amap.com/theme/v1.3/images/newpc/icon/turn-go.png)}.amap-lib-driving .plan-nobus dt.turn-advance .beforedt{background-position:-46px -23px}.amap-lib-driving .plan-nobus dt.turn-left .beforedt{background-position:-87px -23px}.amap-lib-driving .plan-nobus dt.turn-right .beforedt{background-position:-124px -23px}.amap-lib-driving .plan-nobus dt.turn-keepleft .beforedt{background-position:-406px -23px}.amap-lib-driving .plan-nobus dt.turn-keepright .beforedt{background-position:-445px -23px}.amap-lib-driving .plan-nobus dt.turn-leftup .beforedt{background-position:-165px -23px}.amap-lib-driving .plan-nobus dt.turn-leftdown .beforedt{background-position:-246px -23px}.amap-lib-driving .plan-nobus dt.turn-rightup .beforedt{background-position:-206px -23px}.amap-lib-driving .plan-nobus dt.turn-rightdown .beforedt{background-position:-284px -23px}.amap-lib-driving .plan-nobus dt.turn-leftback .beforedt{background-position:-327px -23px}.amap-lib-driving .plan-nobus dt.turn-rightback .beforedt{background-position:-365px -23px}.amap-lib-driving .plan-nobus dt.turn-enterRing .beforedt{background-position:-561px -23px}.amap-lib-driving .plan-nobus dt.turn-leaveRing .beforedt{background-position:-602px -23px}.amap-lib-driving .plan-nobus dt.turn-slow .beforedt{background-position:-524px -23px}.amap-lib-driving .plan-nobus dt.turn-crosswalk .beforedt{background-position:-126px -184px}.amap-lib-driving .plan-nobus dt.turn-overpass .beforedt{background-position:-164px -184px}.amap-lib-driving .plan-nobus dt.turn-underpass .beforedt{background-position:-85px -184px}.amap-lib-driving .plan-nobus dt.turn-squarepass .beforedt{background-position:-204px -184px}.amap-lib-marker-from,.amap-lib-marker-mid,.amap-lib-marker-to{position:absolute;width:19px;height:31px;color:#e90000}.amap-lib-marker-from{background:url(http://webapi.amap.com/theme/v1.3/markers/n/start.png) no-repeat;cursor:pointer}.amap-lib-marker-to{background:url(http://webapi.amap.com/theme/v1.3/markers/n/end.png) no-repeat;cursor:pointer}.amap-lib-marker-mid{background:url(http://webapi.amap.com/theme/v1.3/markers/n/mid.png) no-repeat}.amap-combo-close{position:absolute;top:11px;right:10px;background:url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) -1px -151px no-repeat;width:12px;height:12px;cursor:pointer}.amap-content-body{min-width:200px;max-width:240px;font-family:Helvetica,"Hiragino Sans GB","Microsoft Yahei","微软雅黑",Arial,sans-serif;box-shadow:0 0 .5px rgba(0,0,100,.6);background:#fff;border-radius:2px;text-align:left;border:1px solid silver}.amap-combo-sharp{margin:0 auto;bottom:1px;position:relative;background:url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) -5px -564px no-repeat;width:18px;height:9px}.amap-lib-infowindow{padding:0;position:relative;background-color:#fff;margin:8px}.amap-lib-infowindow-title{line-height:22px;font-size:14px;border-bottom:1px #99adce solid;padding-right:15px}.amap-lib-infowindow-content{padding-top:5px;overflow:hidden;font-size:12px;zoom:1}@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min-resolution:144dpi){.amap-lib-marker-from,.amap-lib-marker-mid,.amap-lib-marker-to{background-size:100% 100%}.amap-lib-marker-from{background-image:url(http://webapi.amap.com/theme/v1.3/markers/b/start.png)}.amap-lib-marker-to{background-image:url(http://webapi.amap.com/theme/v1.3/markers/b/end.png)}.amap-lib-marker-mid{background-image:url(http://webapi.amap.com/theme/v1.3/markers/b/mid.png)}}</style><style type="text/css">.amap-indoor-map .label-canvas{position:absolute;top:0;left:0}.amap-indoor-map .highlight-image-con *{pointer-events:none}.amap-indoormap-floorbar-control{position:absolute;margin:auto 0;bottom:165px;right:12px;width:35px;text-align:center;line-height:1.3em;overflow:hidden;padding:0 2px}.amap-indoormap-floorbar-control .panel-box{background-color:rgba(255,255,255,.9);border-radius:3px;border:1px solid #ccc}.amap-indoormap-floorbar-control .select-dock{position:absolute;top:0;left:0;width:100%;box-sizing:border-box;height:30px;border:solid #4196ff;border-width:0 2px;border-radius:2px;pointer-events:none;background:linear-gradient(to bottom,#f6f8f9 0,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%)}.amap-indoor-map .transition{transition:opacity .2s},.amap-indoormap-floorbar-control .transition{transition:top .2s,margin-top .2s}.amap-indoormap-floorbar-control .select-dock:after,.amap-indoormap-floorbar-control .select-dock:before{content:"";position:absolute;width:0;height:0;left:0;top:10px;border:solid transparent;border-width:4px;border-left-color:#4196ff}.amap-indoormap-floorbar-control .select-dock:after{right:0;left:auto;border-left-color:transparent;border-right-color:#4196ff}.amap-indoormap-floorbar-control.is-mobile{width:37px}.amap-indoormap-floorbar-control.is-mobile .floor-btn{height:35px;line-height:35px}.amap-indoormap-floorbar-control.is-mobile .select-dock{height:35px;top:36px}.amap-indoormap-floorbar-control.is-mobile .select-dock:after,.amap-indoormap-floorbar-control.is-mobile .select-dock:before{top:13px}.amap-indoormap-floorbar-control.is-mobile .floor-list-box{height:105px}.amap-indoormap-floorbar-control .floor-list-item .floor-btn{color:#555;font-family:"Times New Roman",sans-serif,"Microsoft Yahei";font-size:16px}.amap-indoormap-floorbar-control .floor-list-item.selected .floor-btn{color:#000}.amap-indoormap-floorbar-control .floor-btn{height:28px;line-height:28px;overflow:hidden;cursor:pointer;position:relative;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.amap-indoormap-floorbar-control .floor-btn:hover{background-color:rgba(221,221,221,.4)}.amap-indoormap-floorbar-control .floor-minus,.amap-indoormap-floorbar-control .floor-plus{position:relative;text-indent:-1000em}.amap-indoormap-floorbar-control .floor-minus:after,.amap-indoormap-floorbar-control .floor-plus:after{content:"";position:absolute;margin:auto;top:9px;left:0;right:0;width:0;height:0;border:solid transparent;border-width:10px 8px;border-top-color:#777}.amap-indoormap-floorbar-control .floor-minus.disabled,.amap-indoormap-floorbar-control .floor-plus.disabled{opacity:.3}.amap-indoormap-floorbar-control .floor-plus:after{border-bottom-color:#777;border-top-color:transparent;top:-3px}.amap-indoormap-floorbar-control .floor-list-box{max-height:153px;position:relative;overflow-y:hidden}.amap-indoormap-floorbar-control .floor-list{margin:0;padding:0;list-style:none}.amap-indoormap-floorbar-control .floor-list-item{position:relative}.amap-indoormap-floorbar-control .floor-btn.disabled,.amap-indoormap-floorbar-control .floor-btn.disabled *,.amap-indoormap-floorbar-control.with-indrm-loader *{-webkit-pointer-events:none!important;pointer-events:none!important}.amap-indoormap-floorbar-control .with-indrm-loader .floor-nonas{opacity:.5}.amap-indoor-map-moverf-marker{color:#555;background-color:#FFFEEF;border:1px solid #7E7E7E;padding:3px 6px;font-size:12px;white-space:nowrap;display:inline-block;position:absolute;top:1em;left:1.2em}.amap-indoormap-floorbar-control .amap-indrm-loader{-moz-animation:amap-indrm-loader 1.25s infinite linear;-webkit-animation:amap-indrm-loader 1.25s infinite linear;animation:amap-indrm-loader 1.25s infinite linear;border:2px solid #91A3D8;border-right-color:transparent;box-sizing:border-box;display:inline-block;overflow:hidden;text-indent:-9999px;width:13px;height:13px;border-radius:7px;position:absolute;margin:auto;top:0;left:0;right:0;bottom:0}@-moz-keyframes amap-indrm-loader{0%{-moz-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes amap-indrm-loader{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes amap-indrm-loader{0%{-moz-transform:rotate(0);-ms-transform:rotate(0);-webkit-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
+
+    <title>车源信息-危运网-专业的危险品物流平台</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="keywords" content="危运网车源,全国危险品物流车源,危险品物流专线,油品运输专线">
+    <meta name="description" content="危运网，危险品运输专业平台，是专业、信息更新及时的危险品物流服务平台之一。中国危运网开发出专业的微信端危险品运输配货平台，现已支持所有智能手机，可免费使用。">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+    <script src="https://hm.baidu.com/hm.js?26870a68ef8e0499a9da867f5680699a"></script><script type="text/javascript" src="http://www.weiyun5.com/resources/bui/assets/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/layer/layer.js"></script><link rel="stylesheet" href="http://www.weiyun5.com/resources/layer/skin/layer.css" id="layui_layer_skinlayercss" style="">
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/My97DatePicker/WdatePicker.js"></script><link href="http://www.weiyun5.com/resources/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/mall.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/validate.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/util.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/ss.js"></script>
+    <link href="http://www.weiyun5.com/resources/mall/css/module.css" rel="stylesheet" type="text/css">
+    <link href="http://www.weiyun5.com/resources/mall/css/header.css" rel="stylesheet" type="text/css">
+    <link href="http://www.weiyun5.com/resources/mall/css/style.css" rel="stylesheet" type="text/css">
+    <link href="http://www.weiyun5.com/resources/mall/css/footer.css" rel="stylesheet" type="text/css">
+    <link href="http://www.weiyun5.com/resources/mall/css/alert.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css">
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&amp;key=c8d499635271ab4f9d449d35911e2cf1&amp;plugin=AMap.Driving"></script><style type="text/css">.amap-container{cursor:url(http://webapi.amap.com/theme/v1.3/openhand.cur),default;}.amap-drag{cursor:url(http://webapi.amap.com/theme/v1.3/closedhand.cur),default;}</style>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<!--引入头部公共部分-->
+<script src="js/header.js"></script>
+<!--头部 end-->
+<div class="clear"></div>
+<!--内容-->
+<div class="center">
+    <div class="s-position">
+        <ul>
+            <li><a href="http://www.weiyun5.com/">首页</a>&nbsp;&gt;&nbsp;</li>
+            <li><a href="http://www.weiyun5.com/carSource/index">车源信息</a>&nbsp;&gt;&nbsp;</li>
+            <li>车源详情</li>
+        </ul>
+    </div>
+    <div class="deilcar-left left" id="dtapp">
+        <div class="car-left1">
+            <table border="0" class="car-tab1">
+                <tbody><tr>
+                    <td>{{car.startPlace}}</td>
+                    <td rowspan="2"><p></p></td>
+                    <td>{{car.endPlace}}</td>
+                </tr>
+                <tr>
+                    <td><span>（出发地）</span></td>
+                    <td><span>（到达地）</span></td>
+                </tr>
+                </tbody></table>
+            <table width="807" border="0" class="car-tab2">
+                <tbody><tr>
+                    <td width="85"><h1>发布公司&nbsp;</h1></td>
+                    <td>油漆运输</td>
+                    <td width="90"><h1>车辆运价&nbsp;</h1></td>
+                    <td>
+                        <span>面议</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="85"><h1>车辆类型&nbsp;</h1></td>
+                    <td>
+                        <span v-if="car.carType ===1">不锈钢罐车</span>
+                        <span v-if="car.carType ===2">铝罐车</span>
+                        <span v-if="car.carType ===3">压力罐车</span>
+                        <span v-if="car.carType ===4">铁罐车</span>
+                        <span v-if="car.carType ===5">保温罐车</span>
+                        <span v-if="car.carType ===6">平板车</span>
+                        <span v-if="car.carType ===7">高栏车</span>
+                        <span v-if="car.carType ===8">厢式车</span>
+                    </td>
+                    <td width="90"><h1>车源类型&nbsp;</h1></td>
+                    <td>
+                        <span v-if="car.lineType ===1">专程车</span>
+                        <span v-if="car.lineType ===2">回程车</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100"><h1>出发地址&nbsp;</h1></td>
+                    <td width="320">
+                        <p style="width: 306px;">{{car.startPlace}}</p>
+                    </td>
+                    <td width="100"><h1>到达地址&nbsp;</h1></td>
+                    <td>
+                        <p style="width: 306px;">{{car.endPlace}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h1>&nbsp;联&nbsp;系&nbsp;人&nbsp;</h1></td>
+                    <td>
+                        {{car.people}}
+                    </td>
+                    <td><h1>车辆载重&nbsp;</h1></td>
+                    <td>
+                        <span v-if="car.weight>0">{{car.weight}}</span>
+                        <span v-else>未填写</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h1>联系电话&nbsp;</h1></td>
+                    <td>
+                        <span>（认证会员可见）</span>
+                    </td>
+                    <td><a href="javascript:value(0);" id="btn1">发布货重</a>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><h1>发车时间&nbsp;</h1></td>
+                    <td>{{formatDate(car.createTime)}}</td>
+                    <td>
+                        <!--             <a href="javascript:value(0);" onclick="toMap();">推荐路线</a> -->
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                </tbody></table>
+        </div>
+        <form id="carSource">
+            <input type="hidden" name="carId" value="2691">
+        </form>
+        <div class="car-left2">
+            <div id="dataList" class="right-footer"><img src="http://www.weiyun5.com/resources/mall/image/load.gif"></div>
+        </div>
+        <div class="car-tle">
+            <h1>&nbsp;公司介绍 &nbsp;</h1>
+            <a href="http://www.weiyun5.com/enterprise/detail?id=5136" class="btn-company right">进入企业网站</a> </div>
+        <div class="lef4-con">
+
+        </div>
+        <!--<div id="container" style="width: 872px; height: 500px; position: relative; margin-bottom: 20px; background: rgb(252, 249, 242); cursor: url(&quot;http://webapi.amap.com/theme/v1.3/openhand.cur&quot;), default;" class="amap-container"><object style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;" type="text/html" data="about:blank"></object><div class="amap-maps"><div class="amap-drags" style=""><div class="amap-layers" style="transform: translateZ(0px);"><canvas class="amap-layer" width="1090" height="625" style="position: absolute; z-index: 0; transform-origin: 545px 312.5px; transform: scale3d(0.8, 0.8, 1); top: -63px; left: -109px; height: 625px; width: 1090px;"></canvas><div class="amap-markers" style="position: absolute; z-index: 120; top: 250px; left: 436px;"></div><canvas class="amap-labels" draggable="false" style="position: absolute; z-index: 99; height: 500px; width: 872px; top: 0px; left: 0px;" width="1744" height="1000"></canvas></div><div class="amap-overlays" style=""></div></div></div><div style="display: none;"></div><div class="amap-controls"><div class="amap-toolbar" style="left: 10px; top: 10px; visibility: visible;"><div class="amap-pancontrol" style="position: relative; display: block;"><div class="amap-pan-left"></div><div class="amap-pan-top"></div><div class="amap-pan-right"></div><div class="amap-pan-bottom"></div></div><div class="amap-locate" style="position: relative; left: 17px; display: block;"></div><div class="amap-zoomcontrol" style="position: relative; left: 14px;"><div class="amap-zoom-plus"></div><div class="amap-zoom-ruler" style="display: block;"><div class="amap-zoom-mask" style="height: 91px;"></div><div class="amap-zoom-cursor" style="top: 91px;"></div><div class="amap-zoom-labels"><div class="amap-zoom-label-street"></div><div class="amap-zoom-label-city"></div><div class="amap-zoom-label-province"></div><div class="amap-zoom-label-country"></div></div></div><div class="amap-zoom-minus"></div></div></div></div><a class="amap-logo" href="http://gaode.com" target="_blank"><img src="http://webapi.amap.com/theme/v1.3/logo@2x.png"></a><div class="amap-copyright" style="display: none;">&lt;!&ndash;v1.3.28&ndash;&gt; © 2020 AutoNavi <span class="amap-mcode">- GS(2018)1709号</span></div></div>
+        <script type="text/javascript">
+            //基本地图加载
+            var map = new AMap.Map("container", {
+                resizeEnable: true,
+                zoom: 13 //地图显示的缩放级别
+            });
+            //构造路线导航类
+            var driving = new AMap.Driving({
+                map: map
+            });
+            // 根据起终点经纬度规划驾车导航路线
+            //     driving.search(new AMap.LngLat(118.379028, 39.865042), new AMap.LngLat(116.427281, 39.903719));
+            // 根据起始和终点地名
+            driving.search([{city:'340100'},{city:'310100'}]);
+        </script>
+    </div>-->
+    <div class="s-recruitbox-y">
+        <div class="woaicss">
+            <ul class="woaicss_title woaicss_title_bg1" id="woaicsstitle">
+                <li><a onmouseover="javascript:value(0);" id="woaicsstitle1" class="woaicsstitle1">相似车源</a></li>
+            </ul>
+
+        </div>
+        <div class="woaicss">
+            <ul class="woaicss_title woaicss_title_bg1" id="woaicsstitle">
+                <li><a onmouseover="javascript:value(0);" id="woaicsstitle1" class="woaicsstitle1">匹配货源</a></li>
+            </ul>
+
+        </div>
+        <div class="woaicss">
+            <ul class="woaicss_title woaicss_title_bg1" id="woaicsstitle">
+                <li><a onmouseover="javascript:value(0);" id="woaicsstitle1" class="woaicsstitle1">回程车源</a></li>
+            </ul>
+            <div class="woaicss_con" id="woaicss_con1">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <div class="s-advertising">
+            <a href="http://www.dyrhwl.com/index.html"><img src="http://www.weiyun5.com/upload/attached/image/20170221/wyw_20170221101457.jpg"></a>
+        </div>
+        <div class="s-hot"> <a href="http://www.weiyun5.com/article/index">更多&gt;&gt;</a> <span>一周热门新闻</span> </div>
+        <div class="s-recruit-new">
+
+
+            <a href="http://www.weiyun5.com/article/detail?id=4424">
+
+                <img src="http://www.weiyun5.com/upload/attached/image/20200108/wyw_20200108165227.jpg">
+            </a>
+            <p><a href="http://www.weiyun5.com/article/detail?id=4424">【限行】货车请绕行！鼎山长江大桥将限行一个月</a></p>
+
+
+        </div>
+        <ul class="s-new-list">
+
+            <li><span class="grey">1</span><a href="http://www.weiyun5.com/article/detail?id=4423">关注丨雪天路滑，卡友们切记行车安全最重要！</a></li>
+
+            <li><span class="grey">2</span><a href="http://www.weiyun5.com/article/detail?id=4422">今日油价 ：今天1月8日，全国加油站调整后92、95号汽油限售价</a></li>
+
+            <li><span class="grey">3</span><a href="http://www.weiyun5.com/article/detail?id=4421">扣分新规来了！最高减免6分！你只需这样做...</a></li>
+
+            <li><span class="grey">4</span><a href="http://www.weiyun5.com/article/detail?id=4420">又一省提高限速！湖北：2020年起，超速10%只警告不计分！</a></li>
+
+            <li><span class="grey">5</span><a href="http://www.weiyun5.com/article/detail?id=4419">快收藏！2020年起，全国各省份高速危险品运输限行通知！</a></li>
+
+            <li><span class="grey">6</span><a href="http://www.weiyun5.com/article/detail?id=4418">邪门？行驶同段高速收费却大相径庭，记者暗访收费站结果令人心惊</a></li>
+
+        </ul>
+    </div>
+</div>
+<!--内容end-->
+<div class="clear"></div>
+<!--弹框-->
+<div class="f-tck-box" style=" display:none;">
+    <div class="f-bs-bj">
+        <div class="f-sc-j">X</div>
+        <p class="f-xb-x"><a href="javascript:value(0);" onclick="checkTrade();">线下交易</a><span>注：</span>不通过本网站担保，由车主货主双方自行交易</p>
+        <p><a href="javascript:value(0);" onclick="toContract();">线上交易</a><span>注：</span>通过本网站平台进行线上交易</p>
+    </div>
+</div>
+<!--弹框end-->
+<!--底部-->
+
+
+<!--底部-->
+<!--底部 end-->
+<!--底部 end-->
+<script type="text/javascript">
+    function initList(param) {
+        param+="&"+$("#carSource").serialize();
+        $.ajaxPost("http://www.weiyun5.com/carSource/queryOfferList", param, callback);
+    }
+    function callback(data) {
+        $("#dataList").html(data);
+    }
+    $(function() {
+        initList(param);
+    });
+    function toMap(){
+        top.window.location.href="http://www.weiyun5.com/map/planning?departProvince=安徽省&departCity=合肥市&arrvieProvince=上海市&arrvieCity=市辖区";
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function($){
+
+        $("#btn1").click(function(event){
+            var id='';
+            if(id==''){
+                layer.alert("请登录后操作");
+            }else{
+                $(".hint").css({"display":"block"});
+                $(".box").css({"display":"block"});
+            }
+        });
+
+        $(".hint-in3").click(function(event) {
+            $.ajax({
+                type:'post',
+                url:'http://www.weiyun5.com/checkOffer',
+                data:$("#offer").serialize(),
+                success:function(data) {
+                    logining = false;
+                    if (data == "success") {
+                        $(".hint").css({"display":"none"});
+                        $(".box").css({"display":"none"});
+                        layer.alert("报货成功",function(index){layer.close(index);initList();});
+                    } else {
+                        var error = [];
+                        for (var key in data) {
+                            error.push(data[key] + "\n");
+                        }
+                        layer.alert(error.join(""));
+                    }
+                }
+            });
+        });
+
+        $(".hint3").click(function(event) {
+            $(this).parent().parent().css({"display":"none"});
+            $(".box").css({"display":"none"});
+        });
+
+        $(".tan-del").click(function() {
+            $(".hint").css({"display":"none"});
+            $(".box").css({"display":"none"});
+        });
+
+    });
+</script>
+<script>
+    function checkTrade(){
+        var carSource='2691';
+        var enterprise=byId("enterpriseId").value;
+        $.ajax({
+            type:'post',
+            url:'http://www.weiyun5.com/carSource/checkTrade',
+            data:'enterprise='+enterprise+'&carSource='+carSource,
+            success:function(data) {
+                logining = false;
+                if (data == "success") {
+                    layer.alert("线下交易成功",function(index){layer.close(index);top.window.location.href = "http://www.weiyun5.com/foreground/member/index?type=10";});
+                } else {
+                    var error = [];
+                    for (var key in data) {
+                        error.push(data[key] + "\n");
+                    }
+                    layer.alert(error.join(""));
+                }
+            }
+        });
+    }
+    function toContract(){
+        var carSource='2691';
+        var enterprise=byId("enterpriseId").value;
+        top.window.location.href="http://www.weiyun5.com/carSource/contract?carSource="+carSource+"&enterprise="+enterprise;
+    }
+</script>
+    <script src="./js/vue/vue.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el: "#dtapp",
+            data: {
+                wlkg,
+                user: {},
+                car: {}
+            },
+            async created() {
+                /*try {
+                    const resp = await wlkg.http.get("/auth/verify");
+                    this.user = resp.data;
+                } catch {
+                }*/
+                this.loadOrder();
+            },
+            methods: {
+                /* isLogin() {
+                     return new Promise((resolve, reject) => {
+                         wlkg.http.get("/auth/verify").then(resp => {
+                             resolve(resp);
+                         }).catch(error => {
+                             if (this.user) {
+                                 // 重新登录
+                                 console.log("已过期");
+                                 window.location.href = "http://www.wlkg.com/login.html?returnUrl=" + window.location.href;
+                             }
+                             reject(error);
+                         })
+                     })
+                     return wlkg.http.get("/auth/verify");
+                 },*/
+                loadOrder() {
+                    let id = this.GetQueryString("id")
+                    wlkg.http.get("/car/" + id).then(({data}) => {
+                        console.log(data)
+                        vm.car = data;
+                    }).catch(() => this.goods = {})
+                },
+                formatDate: wlkg.formatDate,
+                formatPrice: wlkg.formatPrice,
+                /*getTotalPrice(order){
+                    return order.orderDetails.map(d => d.num * d.price).reduce((v1,v2) => v1 + v2, 0);
+                },*/
+                //获取地址栏上的参数
+                GetQueryString(name){
+                    let reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                    let r = window.location.search.substr(1).match(reg);
+                    if(r!=null)return  unescape(r[2]); return null;
+                }
+            }
+        });
+    </script>
+<iframe src="https://graph.qq.com/jsdkproxy/PMProxy.html#1.0.1" style="width: 0px; height: 0px; display: none; overflow: hidden;"></iframe></body></html>

@@ -1,173 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <title>危运网-专业的危险品物流平台</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="keywords" content="危运网,化工物流,危险品物流,危险品运输,成品油运输,化学危险品运输,化学危险品物流,危化品运输,危险化学品运输" />
+    <meta name="description" content="危运网，危险品运输专业平台，是中国专业、信息更新及时的危险品物流服务平台之一。中国危运网开发出专业的微信端危险品运输配货平台，现已支持所有智能手机，可免费使用。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script src="./js/plugins/jquery/jquery.min.js"></script>
+    <script src="./js/plugins/jquery/jquery.form.js"></script>
+    <script src="./js/plugins/layer/layer.js"></script>
+    <script src="./js/plugins/js/WdatePicker.js"></script>
+    <script src="./js/plugins/js/mall.js"></script>
+    <script src="./js/plugins/js/validate.js"></script>
+    <script src="./js/plugins/js/util.js"></script>
+    <script src="./js/plugins/js/ss.js"></script>
+    <link href="http://www.weiyun5.com/resources/mall/css/module.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/header.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/alert.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101358714" charset="utf-8"></script>
+    <style type="text/css">
+        .layui-layer-btn {
+            text-align: center;
+            padding: 0 10px 12px;
+            pointer-events: auto;
+        }
+    </style>
+
 </head>
-<style>
-    html,body,#app{
-		width: 100%;
-		height:100%;
-		margin: 0;
-		padding:0;
-	}
-	#app{
-		/*display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items:center;*/
-	}
-	.loginbox{
-		width:600px;
-		height:350px;
-		position:absolute;
-		top:0;
-		right:0;
-		left:0;
-		bottom:0;
-		margin:160px auto auto auto;
-		border:1px solid #ccc;
-		border-radius: 10px;
-	}
-	.loginbox{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items:center;
-	}
-	.loginform{
-		width:80%;
-	}
-	.registerbox{
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
-</style>
+<body onkeydown="keyLogin();">
+<div class="page">
+    <div class="login-top">
+        <div class="center">
+            <div class="left">
+                <a href="http://www.weiyun5.com/" class="login-logo"><img src="http://www.weiyun5.com/upload/attached/image/20190422/wyw_20190422151908.png" width="278" height="74"/></a>
+                <p class="login-line">|</p>
+                <p class="login-logo-p">登录</p></div>
 
-<body>
-    <div id="app">
-        <div class="loginbox" v-loading='pageLoading'>
-            <h3>账户登录</h3>
-            <el-form class="loginform" :model="form" label-width="40px">
-                <el-form-item label="账号">
-                    <el-input v-model="form.account"></el-input>
-                </el-form-item>
-                <el-form-item label="密码">
-                    <el-input type="password" v-model="form.pwd"></el-input>
-                </el-form-item>
-                <div class="registerbox">
-                    <el-button type='text' @click='findpwd' size='mini'>忘记登录密码</el-button>
-                    <el-button type='text' @click="register" size='mini'>免费注册</el-button>
-                </div>
-                <el-button type="primary" style='width:100%;' @click="login">登 录</el-button>
-                <!-- <el-form-item>
-                    <el-button type="primary" style='width:100%;' @click="onSubmit">登 录</el-button>
-                </el-form-item> -->
-            </el-form>
+
         </div>
-        <el-dialog v-loading="pageLoading" title="密码找回" :visible.sync="dialogFormVisible">
-            <el-form :model="findform">
-                <el-form-item label="找回账号" :label-width="formLabelWidth">
-                    <el-input v-model="findform.account" autocomplete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="绑定手机号" :label-width="formLabelWidth">
-                    <el-input v-model="findform.phone" autocomplete="off"></el-input>
-                </el-form-item>
-
-
-                <el-form-item label="设定新密码" :label-width="formLabelWidth">
-                    <el-input v-model="findform.newpwd" autocomplete="off"></el-input>
-                </el-form-item>
-
-
-                <el-form-item label="确认新密码" :label-width="formLabelWidth">
-                    <el-input v-model="findform.confirmpwd" autocomplete="off"></el-input>
-                </el-form-item>
-            </el-form>
-            <div slot="footer" class="dialog-footer">
-                <el-button @click="dialogFormVisible = false">取 消</el-button>
-                <el-button type="primary" @click="findpwdevent">找 回</el-button>
-            </div>
-        </el-dialog>
     </div>
-</body>
 
-</html>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script>
-var vm = new Vue({
-    el: '#app',
-    data() {
-        return {
-            dialogFormVisible: false,
-            pageLoading: false,
-            form: {
-                account: '',
-                pwd: '',
-            },
-            findform: {
-                account:'',
-                phone:'',
-                newpwd:'',
-                confirmpwd:'',
-            },
-            formLabelWidth: '120px',
-        }
-    },
-    methods: {
-        login() {
-            let _this = this;
-            this.pageLoading = true;
-            $.ajax({
-                url: '',
-                type: 'post',
-                data: {
+    <div class="login-middle">
+        <div class="login-micen">
+            <div class="login-k">
+                <div class="login-kcen">
+                    <h2>账户登录</h2>
+                    <form id="loginForm">
+                        <span style="color:red;font-size:13px;line-height:15px;font-weight:600;" id="tip"></span>
+                        <input name="account" type="text" class="login-use" placeholder="手机号/会员名/邮箱" id="account" />
+                        <input name="password" type="password" class="login-pass" id="password" />
 
-                },
-                success(result) {
-                    //callback
-                    _this.pageLoading = false;
+                    </form>
+                    <h3><a href="/">忘记登录密码</a> <a href="./register.html" class="right">免费注册</a></h3>
+                    <input name="" type="button" value="登&nbsp;&nbsp;&nbsp;录" class="login-button" style="" onclick="login();"/>
+                </div>
+                <div class="login-kcen2 right">
+                    <span id="login_container"></span>
+                    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+                    <script>
+                        var obj = new WxLogin({
+                            id: "login_container",
+                            appid: "wx981ad0643c0a6479",
+                            scope: "snsapi_login",
+                            redirect_uri: encodeURIComponent("http://www.weiyun5.com/foreground/login"),
+                            state: Math.ceil(Math.random()*1000),
+                            style: "black",
+                            href: "data-http://www.weiyun5.com/resources/mall/css/weixin.css"});
+                    </script>
+                </div>
 
-                },
-                error(error) {
-                    console.error(error);
-                    _this.pageLoading = false;
+            </div>
+            <div class="login-bocen">©2013-2017 weiyun5.com 鲁ICP备13030353号-1</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+
+
+    function login(){
+        $.ajax({
+            type:'post',
+            url:'http://api.wlkg.com/api/user/login',
+            data:$("#loginForm").serialize(),
+
+            success:function(data) {
+                if (data) {
+                    alert("登陆成功");
+                    top.window.location.href = "http://www.wlkg.com/index.html"
                 }
-            })
-        },
-        register() {
-        	window.location.href = 'register.html'
-        },
-        findpwd() {
-        	this.dialogFormVisible = true;
-        },
-        findpwdevent(){
-        	let _this = this;
-            this.pageLoading = true;
-            $.ajax({
-                url: '',
-                type: 'post',
-                data: {
+            },
 
-                },
-                success(result) {
-                    //callback
-                    _this.pageLoading = false;
-
-                },
-                error(error) {
-                    console.error(error);
-                    _this.pageLoading = false;
+            error:function () {
+                let v=window.confirm("登陆失败。去注册吗?");
+                if (v) {
+                    window.location.href="http://www.wlkg.com/register.html"
+                }else {
+                    window.location.href="http://www.wlkg.com/login.html"
                 }
-            })
-        }
+            }
+        });
     }
-});
 </script>
+<script language="JavaScript">
+    function keyLogin(){
+        if (event.keyCode==13)   //回车键的键值为13
+            login();
+    }
+</script>
+</body>
+</html>

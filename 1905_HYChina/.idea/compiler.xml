@@ -7,21 +7,29 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hy_sms" />
+        <module name="hy_auth_common" />
         <module name="hy_monitor_admin" />
-        <module name="hy_eureka_center" />
         <module name="hy_car_server" />
         <module name="hy_zuul_server" />
         <module name="hy_log_server" />
         <module name="hy_commons" />
+        <module name="hy_eureka_center" />
         <module name="hy_config_conter" />
+        <module name="hy_auth_server" />
         <module name="hy_user_server" />
         <module name="hy_business" />
         <module name="hy_goods_server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hy_auth_center" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hy_auth_center" options="-parameters" />
+      <module name="hy_auth_common" options="-parameters" />
+      <module name="hy_auth_server" options="-parameters" />
       <module name="hy_business" options="-parameters" />
       <module name="hy_car_server" options="-parameters" />
       <module name="hy_commons" options="-parameters" />

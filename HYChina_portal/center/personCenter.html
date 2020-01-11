@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <title>危运网-专业的危险品物流平台</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="keywords" content="危运网,化工物流,危险品物流,危险品运输,成品油运输,化学危险品运输,化学危险品物流,危化品运输,危险化学品运输" />
+    <meta name="description" content="危运网，危险品运输专业平台，是中国专业、信息更新及时的危险品物流服务平台之一。中国危运网开发出专业的微信端危险品运输配货平台，现已支持所有智能手机，可免费使用。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/bui/assets/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/layer/layer.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/mall.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/validate.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/util.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/ss.js"></script>
+    <link href="http://www.weiyun5.com/resources/mall/css/module.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/header.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/alert.css" rel="stylesheet" type="text/css" />
+
+    <script charset="utf-8" href="http://www.weiyun5.com/resources/kindeditor/themes/default/default.css"></script>
+    <script charset="utf-8" href="http://www.weiyun5.com/resources/kindeditor/plugins/code/prettify.css"></script>
+    <script charset="utf-8" src="http://www.weiyun5.com/resources/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="http://www.weiyun5.com/resources/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="http://www.weiyun5.com/resources/kindeditor/plugins/code/prettify.js"></script>
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101358714" charset="utf-8"></script>
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+</head>
+<body>
+<div class="box"></div>
+<div class="hint">
+    <div class="hint-in1">
+        <div class="hint1"></div>
+        <div class="hint2">运输价格</div>
+        <div class="hint3"></div>
+    </div>
+    <form id="offer">
+        <input name="memberId" type="hidden" value="5164"/>
+        <input name="goodId" type="hidden" id="goodId"/>
+        <div class="hint-in2">价格：<input name="offer" type="text" class="tan-input" />/吨</div>
+    </form>
+    <div class="hint-in3">确定</div><div class="tan-del">取消</div>
+</div>
+<!--头部 start-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--三级联动-->
+<link href="http://www.weiyun5.com/resources/mall/css/city-picker.css" rel="stylesheet">
+<!--头部 start-->
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101358714" charset="utf-8"></script>
+<header>
+    <div class="top1">
+        <div class="center" style="overflow: initial;">
+            <p class="welcom">欢迎光临危运网！</p>
+            <a href="http://www.wlkg.com/center/publishCarsSource.html"><img src="http://www.weiyun5.com/resources/mall/images/icon-che.png" />发布车源信息</a>
+            <div class="line">|</div>
+            <a href="http://www.wlkg.com/center/publishGoodsSource.html"><img src="http://www.weiyun5.com/resources/mall/images/icon-huo.png" />发布货源信息</a>
+            <div class="right"> 欢迎，
+                <p class="welcom2">
+                    田哥
+                </p>
+
+                <div class="line">|</div>
+                <a href="http://www.wlkg.com/center/personCenter.html">个人中心</a>
+                <div class="line">|</div>
+                <a href="javascript:;" onclick="logoutMember();">退出</a>
+
+                <div class="line">|</div>
+                <a href="http://www.wlkg.com/login.html">登录</a>
+                <div class="line">|</div>
+                <a href="http://www.wlkg.com/register.html">注册</a>
+
+                <div class="line">|</div>
+                <div onclick="top.window.location.href = 'http://www.weiyun5.com/about?type=map';" class="s-lang-box">网站地图
+                    <div class="s-language" style=" display:none;">
+                        <div class="p-map1">
+
+                            <h1><a href="http://www.weiyun5.com/article/index">行业资讯</a></h1>
+                            <ul>
+
+                                <li><a href="http://www.weiyun5.com/article/index">最新资讯</a></li>
+
+                                <li style="width:5%; color:#ddd;">|</li>
+
+                                <li><a href="http://www.weiyun5.com/article/index?program=6">政策法规</a></li>
+
+                                <li style="width:5%; color:#ddd;">|</li>
+
+                                <li><a href="http://www.weiyun5.com/article/index?program=7">行业新闻</a></li>
+
+                                <li><a href="http://www.weiyun5.com/article/index?program=8">化工详情</a></li>
+
+                                <li style="width:5%; color:#ddd;">|</li>
+
+                                <li><a href="http://www.weiyun5.com/article/index?program=9">热门视频</a></li>
+
+                                <li style="width:5%; color:#ddd;">|</li>
+
+                                <li><a href="http://www.weiyun5.com/exhibition/index">展会信息</a></li>
+
+                            </ul>
+
+                            <h1><a href="http://www.weiyun5.com/foreground/member/index?type=10">个人中心</a></h1>
+                            <ul>
+
+                                <li><a href="http://www.weiyun5.com/foreground/member/index?type=10">会员中心</a></li>
+
+                                <li style="width:5%; color:#ddd;">|</li>
+
+                                <li><a href="http://www.weiyun5.com/foreground/member/index?type=20">安全设置</a></li>
+
+                                <li style="width:5%; color:#ddd;">|</li>
+
+                                <li><a href="http://www.weiyun5.com/foreground/member/index?type=30">我的论坛</a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div class="repoter-img" style="margin:25px 0 0 0">
+
+        </div>
+    </div>
+    <div class="top2">
+        <div class="center" style=" overflow: visible;"> <a href="http://www.weiyun5.com/"><img src="http://www.weiyun5.com/upload/attached/image/20190422/wyw_20190422151908.png" class="logo"/></a>
+            <div class="jq22-search-form right">
+                <div id="search-bd" class="search-bd">
+                    <ul>
+                        <li class="selected" value="1">货源</li>
+                        <li value="2">车源</li>
+                        <li value="3">资讯</li>
+                        <li value="4">论坛</li>
+                        <li value="5">企业</li>
+                        <li value="6">百科</li>
+                    </ul>
+                </div>
+                <div id="search-hd" class="search-hd">
+                    <form id="headQuick">
+                        <input type="hidden" id="quickUrl" name="quickUrl" value="1">
+                        <div class="search-bg"></div>
+                        <input type="text" id="s1" class="search-input">
+                        <input type="text" id="s2" class="search-input" style="display: none;">
+                        <input type="text" id="s3" name="articleTitle" class="search-input" style="width: 450px; display: none;">
+                        <input type="text" id="s4" name="bbsTopic" class="search-input" style="width: 450px; display: none;">
+                        <input type="text" id="s5" name="enterpriseName" class="search-input" style="width: 450px; display: none;">
+                        <input type="text" id="s6" name="encyclopediaTitle" class="search-input" style="width: 450px; display: none;">
+                        <span class="s1 pholder">
+        	 <input name="goodDepart" type="text" id="city-picker3" class="form-control" readonly type="text" data-toggle="city-picker" placeholder="请输入出发城市" />
+             <span style="float:left;">&nbsp;&nbsp;&nbsp;--&nbsp;&nbsp;&nbsp;</span>
+             <input name="goodArrvie" type="text" id="city-picker3" class="form-control" readonly type="text" data-toggle="city-picker" placeholder="请输入出发城市" />
+        </span>
+                        <span class="s2 pholder">
+        	 <input name="carDepart" type="text" id="city-picker3" class="form-control" readonly type="text" data-toggle="city-picker" placeholder="请输入出发城市" />
+             <span style="float:left;">&nbsp;&nbsp;&nbsp;--&nbsp;&nbsp;&nbsp;</span>
+             <input name="carArrvie" type="text" id="city-picker3" class="form-control" readonly type="text" data-toggle="city-picker" placeholder="请输入出发城市" />
+        </span> <span class="s3 pholder" style="display: none;">请输入关键字</span>
+                        <span class="s4 pholder" style="display: none;">请输入关键字</span>
+                        <span class="s5 pholder" style="display: none;">请输入关键字</span>
+                        <span class="s6 pholder" style="display: none;">请输入关键字</span>
+                    </form>
+                    <button id="submit" onclick="quickUrl();" class="btn-search" value="搜索">搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--头部 end-->
+<div class="clear"></div>
+<!--导航栏-->
+<div class="nav">
+    <div class="center3" style="position:relative">
+        <ul class="nav-main">
+            <li><a href="http://www.wlkg.com/" class="hover">首页</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li><a href="http://www.wlkg.com/carSource.html" >车源信息</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li><a href="http://www.wlkg.com/goodSource.html" >货源信息</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li><a href="http://www.wlkg.com/industryInfo.html" >行业资讯</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li><a href="http://www.wlkg.com/carServer.html" >车辆服务</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li><a href="http://www.wlkg.com/businessShow.html" >企业展示</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li id="li-1">
+                <a href="#" >人才招聘</a><div class="line-nav">|</div>
+            </li>
+            <li>
+                <a href="http://www.weiyun5.com/encyclopedia/index" >危险品百科</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li><a href="http://www.weiyun5.com/BBS/index" >危运论坛</a>
+                <div class="line-nav">|</div>
+            </li>
+            <li><a href="http://www.weiyun5.com/exhibition/index" >展会信息</a>
+                <div class="line-nav"></div></li>
+
+        </ul>
+        <!--隐藏盒子-->
+        <div id="box-1" class="hidden-box hidden-loc-index">
+            <ul>
+                <li><a href="http://www.wlkg.com/employer.html" style="padding:0 10px;">招聘信息</a></li>
+                <li><a href="http://www.wlkg.com/employee.html" style="padding:0 10px;">求职信息</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<!--导航栏 end-->
+<!--搜索框-->
+<script>
+    $(function(){
+        //通用头部搜索切换
+        $('#search-hd .search-input').on('input propertychange',function(){
+            var val = $(this).val();
+            if(val.length > 0){
+                $('#search-hd .pholder').hide(0);
+            }else{
+                var index = $('#search-bd li.selected').index();
+                $('#search-hd .pholder').eq(index).show().siblings('.pholder').hide(0);
+            }
+        })
+        $('#search-bd li').click(function(){
+            var index = $(this).index();
+            $('#search-hd .pholder').eq(index).show().siblings('.pholder').hide(0);
+            $('#search-hd .search-input').eq(index).show().siblings('.search-input').hide(0);
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('#search-hd .search-input').val('');
+            document.getElementById("quickUrl").value=$(this).val();
+        });
+    })
+</script>
+<script>
+    $(".nav ul li a").click(function(){
+        $(".nav ul li a").removeClass("hover");
+        $(this).addClass("hover");
+    });
+</script>
+<!--网站地图-->
+<script>
+    $(".s-lang-box").hover(function(){
+        $(".s-language").toggle();
+    });
+</script>
+<!--网站地图 end-->
+<!--导航下拉菜单-->
+<script>
+    $(document).ready(function(){
+//    nav-li hover e
+        var num;
+        $('.nav-main>li[id]').hover(function(){
+            /*图标向上旋转*/
+            $(this).children('a').removeClass().addClass('hover-up');
+            /*下拉框出现*/
+            var Obj = $(this).attr('id');
+            num = Obj.substring(3, Obj.length);
+            $('#box-'+num).slideDown(300);
+        },function(){
+            /*图标向下旋转*/
+            $(this).children('a').removeClass().addClass('hover-down');
+            /*下拉框消失*/
+            $('#box-'+num).hide();
+        });
+//    hidden-box hover e
+        $('.hidden-box').hover(function(){
+            /*保持图标向上*/
+            $('#li-'+num).children('a').removeClass().addClass('hover-up');
+            $(this).show();
+        },function(){
+            $(this).slideUp(200);
+            $('#li-'+num).children('a').removeClass().addClass('hover-down');
+        });
+    });
+    function quickUrl(){
+        var type=document.getElementById("quickUrl").value;
+        var url='';
+        var params=$("#headQuick").serialize();
+        if(type==1){
+            url='goodSource.html';
+        }
+        if(type==2){
+            url='carSource.html';
+        }
+        if(type==3){
+            url='article/index?';
+        }
+        if(type==4){
+            url='BBS/index?';
+        }
+        if(type==5){
+            url='enterprise/index?';
+        }
+        if(type==6){
+            url='encyclopedia/index?';
+        }
+        // top.window.location.href = "http://www.weiyun5.com/"+url+params;
+        top.window.location.href = "http://www.wlkg.com/"+url
+    }
+    function logoutMember(){
+        QC.Login.signOut();
+        top.window.location.href = "http://api.wlkg.com/api/user/logout";
+    }
+</script>
+<!--导航下拉菜单 end-->
+<script src="http://www.weiyun5.com/upload/city-data.js"></script>
+<script src="http://www.weiyun5.com/resources/mall/js/city-picker.js"></script>
+
+<!--头部 end-->
+<div class="clear"></div>
+<!--内容-->
+<div class="s-position">
+    <ul>
+        <li><a href="http://www.weiyun5.com/">首页</a>></li>
+        <li>会员中心</li>
+    </ul>
+</div>
+<!--会员中心-->
+<div class="center">
+    <div class="center_l">
+        <input type="hidden" id="type" name="type" value="10"/>
+        <input type="hidden" id="evaluateType" name="evaluateType"/>
+        <input type="hidden" id="evaluateNum" name="evaluateNum"/>
+        <ul>
+            <li class="center_on" value="10"><i class="icon_1"></i><span>会员中心</span></li>
+            <ul class="menu_body" style="display:block;">
+                <li class="span-bg1" value="15"><span class="icon_12"></span>基本资料</li>
+                <li class="span-bg2" value="16"><span class="icon_22"></span>企业信息</li>
+            </ul>
+            <li value="20"><i class="icon_2"></i><span>安全信息</span></li>
+            <li value="30"><i class="icon_3"></i><span>我的论坛</span></li>
+            <li><i class="icon_4"></i><span>订单中心</span></li>
+            <ul class="menu_body" style="display:block;">
+                <li class="span-bg1" value="46"><span class="icon_11"></span>货源订单</li>
+                <li class="span-bg2" value="44"><span class="icon_21"></span>车源订单</li>
+                <li class="span-bg3" value="41"><span class="icon_31"></span>线下货源</li>
+                <li class="span-bg4" value="42"><span class="icon_41"></span>线下车源</li>
+            </ul>
+            <li><i class="icon_5"></i><span>资产中心</span></li>
+            <ul class="menu_body" style="display:block;">
+                <li class="span-bg1" value="51"><span class="icon_13"></span>充值</li>
+                <li class="span-bg2" value="52"><span class="icon_23"></span>提现</li>
+                <li class="span-bg3" value="54"><span class="icon_33"></span>财务明细</li>
+                <li class="span-bg5 " value="53"><span class="icon_53"></span>积分管理</li>
+            </ul>
+            <li><i class="icon_5"></i><span>信息管理</span></li>
+            <ul class="menu_body" style="display:block;">
+                <li class="span-bg2" value="61"><span class="icon_21"></span>车源信息</li>
+                <li class="span-bg1" value="62"><span class="icon_11"></span>货源信息</li>
+                <li class="span-bg3" value="63"><span class="icon_51"></span>车辆服务信息</li>
+                <li class="span-bg4" value="64"><span class="icon_61"></span>招聘信息</li>
+                <li class="span-bg5" value="65"><span class="icon_71"></span>求职信息</li>
+            </ul>
+        </ul>
+    </div>
+<!--    <div id="dataList" class="right-footer"><img src="http://www.weiyun5.com/resources/mall/image/load.gif"/></div>-->
+    <div class="center_r" id="account">
+        <div class="center_r_t">
+            <div class="jbxx">
+                <div class="tx">
+                    <img src="http://www.weiyun5.com/resources/mall/images/tx.jpg" width="134" height="134"/>
+
+                    <span class="rz">
+
+                <a href="javascript:value(0);" onclick="queryMember(5);"><img src="http://www.weiyun5.com/resources/mall/images/wrz.png" width="76" height="23" /></a>
+    			</span>
+                </div>
+                <div class="right">
+                    <div class="xm">欢迎您，<span>田哥</span>！</div>
+                    <div class="bd_icon">
+                    	<span>
+
+                    	<a href="javascript:value(0);" onclick="queryMember(1);"><img src="http://www.weiyun5.com/resources/mall/images/rz1.png" /></a>
+                    	</span>
+                        <span>
+                    	<a href="javascript:value(0);" onclick="queryMember(8);"><img src="http://www.weiyun5.com/resources/mall/images/rz6.png" /></a>
+
+                    	</span>
+                        <span>
+                    	<a href="javascript:value(0);" onclick="queryMember(3);"><img src="http://www.weiyun5.com/resources/mall/images/rz7.png" /></a>
+
+                    	</span>
+                        <span>
+                    	<a href="javascript:value(0);" onclick="queryMember(4);"><img src="http://www.weiyun5.com/resources/mall/images/rz8.png" /></a>
+
+                    	</span>
+                    </div>
+                </div>
+            </div>
+            <div class="zhxx">
+                <ul>
+                    <li><span class="pic_1"></span><p>账户余额</p><h4><strong>0</strong></h4></li>
+                    <li><span class="pic_2"></span><p>可用积分</p><h4><strong>40.0</strong></h4></li>
+                    <li><span class="pic_3"></span><p>保证金</p><h4><strong>0</strong></h4></li>
+                </ul>
+            </div>
+        </div>
+        <div class="center_fb">
+            <ul>
+                <li class="fb1"><p><a href="http://www.wlkg.com/center/publishCarsSource.html">发布车源</a></p></li>
+                <li class="fb2"><p><a href="http://www.wlkg.com/center/publishGoodsSource.html">发布货源</a></p></li>
+                <li class="fb3"><p><a href="javascript:value(0);" onclick="queryMember(12);">发布招聘信息</a></p></li>
+                <li class="fb3"><p><a href="javascript:value(0);" onclick="queryMember(14);">发布简历信息</a></p></li>
+                <li class="fb4"><p><a href="javascript:value(0);" onclick="queryMember(13);">发布车辆服务信息</a></p></li>
+            </ul>
+        </div>
+        <div class="wblink">
+            <div class="link_lt left"><a href="http://www.weiyun5.com/BBS/index"><span><img src="http://www.weiyun5.com/resources/mall/images/lt.png" width="30" height="26" /></span>进入危运论坛>></a></div>
+            <div class="link_lt right"><a href="http://www.weiyun5.com/article/index"><span><img src="http://www.weiyun5.com/resources/mall/images/zx.png" width="30" height="26" /></span>危险品行业资讯>></a></div>
+        </div>
+        <script>
+            <!--
+            function setTab(name, cursel, n) {
+                for (i = 1; i <= n; i++) {
+                    var menu = document.getElementById(name + i);
+                    var con = document.getElementById("con_" + name + "_" + i);
+                    //alert(menu);
+                    menu.className = i == cursel ? "hover" : "";
+                    con.style.display = i == cursel ? "block" : "none";
+                }
+            }
+            //-->
+        </script>
+        <div class="tab_title">
+            <ul>
+                <li id="one1" onclick="setTab('one',1,2)" class="hover">最近发布的车源</li>
+                <li id="one2" onclick="setTab('one',2,2)">最近发布的货源</li><!--将onclick替换成onmouseover-->
+            </ul>
+        </div>
+        <div id="con_one_1" class="tab_1">
+            <table border="0" width="932">
+                <tr class="huo-tr">
+                    <td><strong>出发地</strong></td>
+                    <td><img src="http://www.weiyun5.com/resources/mall/images/jian-1.png" /></td>
+                    <td><strong>到达地</strong></td>
+                    <td><strong>车辆类型</strong></td>
+                    <td><strong>运输类型</strong></td>
+                    <td><strong>时间</strong></td>
+                    <td><strong>会员类型</strong></td>
+                    <td><strong>查看</strong></td>
+                </tr>
+                <tr v-for="(o,i) in cars" :key="i">
+                    <td><span>{{o.startPlace}}</span></td>
+                    <td><div class="jian2"><span>{{o.weight}}吨</span></div></td>
+                    <td><span>{{o.endPlace}}</span></td>
+                    <td>
+                        <span v-if="o.carType ===1">不锈钢罐车</span>
+                        <span v-if="o.carType ===2">铝罐车</span>
+                        <span v-if="o.carType ===3">压力罐车</span>
+                        <span v-if="o.carType ===4">铁罐车</span>
+                        <span v-if="o.carType ===5">保温罐车</span>
+                        <span v-if="o.carType ===6">平板车</span>
+                        <span v-if="o.carType ===7">高栏车</span>
+                        <span v-if="o.carType ===8">厢式车</span>
+                    </td>
+                    <td>
+                        <span v-if="o.lineType ===1">专程车</span>
+                        <span v-if="o.lineType ===2">回程车</span>
+                    </td>
+                    <td><span>{{formatDate(o.createTime)}}</span></td>
+                    <td><span class="yellow">普通会员</span></td>
+                    <td><a :href="'http://www.wlkg.com/carinfo.html?id='+o.id" class="look">查看</a></td>
+                </tr>
+
+            </table>
+        </div>
+        <div id="con_one_2" class="tab_1 display_no">
+            <table border="0" width="932">
+                <tr class="huo-tr">
+                    <td><strong>出发地</strong></td>
+                    <td><img src="http://www.weiyun5.com/resources/mall/images/jian-1.png" /></td>
+                    <td><strong>到达地</strong></td>
+                    <td><strong>货物名称</strong></td>
+                    <td><strong>时间</strong></td>
+                    <td><strong>会员类型</strong></td>
+                    <td><strong>查看</strong></td>
+                </tr>
+                <tr v-for="(o,i) in goods" :key="i">
+                    <td><span>{{o.startPlace}}</span></td>
+                    <td><div class="jian2"><span>{{o.weight}}</span></div></td>
+                    <td><span>{{o.endPlace}}</span></td>
+                    <td><span>{{o.goodsName}}</span></td>
+                    <td><span>{{formatDate(o.createTime)}}</span></td>
+                    <td><span class="yellow">普通会员</span></td>
+                    <td><a :href="'http://www.wlkg.com/goodinfo.html?id='+o.id" class="look">查看</a></td>
+                </tr>
+
+            </table>
+        </div>
+        <!-- <div class="order">
+            <div class="order_title"><span class="more"></span><span class="order_l">最新订单</span></div>
+            <table border="0" width="932">
+                <tr class="huo-tr">
+                  <td><strong>出发地</strong></td>
+                  <td><img src="http://www.weiyun5.com/resources/mall/images/jian-1.png" /></td>
+                  <td><strong>到达地</strong></td>
+                  <td><strong>车辆类型</strong></td>
+                  <td><strong>运输类型</strong></td>
+                  <td><strong>时间</strong></td>
+                  <td><strong>会员类型</strong></td>
+                  <td><strong>查看</strong></td>
+                </tr>
+                <tr>
+                  <td>广东惠州市</td>
+                  <td><div class="jian2">17吨</div></td>
+                  <td>广西桂林市</td>
+                  <td>不锈钢罐车</td>
+                  <td>专程车</td>
+                  <td>06-20</td>
+                  <td><span class="yellow">普通会员</span></td>
+                  <td><a href="" class="look">查看</a></td>
+                </tr>
+                <tr>
+                  <td>广东惠州市</td>
+                  <td><div class="jian2">17吨</div></td>
+                  <td>广西桂林市</td>
+                  <td>不锈钢罐车</td>
+                  <td>专程车</td>
+                  <td>06-20</td>
+                  <td><span class="yellow">普通会员</span></td>
+                  <td><a href="" class="look">查看</a></td>
+                </tr>
+                <tr>
+                  <td>广东惠州市</td>
+                  <td><div class="jian2">17吨</div></td>
+                  <td>广西桂林市</td>
+                  <td>不锈钢罐车</td>
+                  <td>专程车</td>
+                  <td>06-20</td>
+                  <td><span class="yellow">普通会员</span></td>
+                  <td><a href="" class="look">查看</a></td>
+                </tr>
+                <tr>
+                  <td>广东惠州市</td>
+                  <td><div class="jian2">17吨</div></td>
+                  <td>广西桂林市</td>
+                  <td>不锈钢罐车</td>
+                  <td>专程车</td>
+                  <td>06-20</td>
+                  <td><span class="yellow">普通会员</span></td>
+                  <td><a href="" class="look">查看</a></td>
+                </tr>
+                <tr>
+                  <td>广东惠州市</td>
+                  <td><div class="jian2">17吨</div></td>
+                  <td>广西桂林市</td>
+                  <td>不锈钢罐车</td>
+                  <td>专程车</td>
+                  <td>06-20</td>
+                  <td><span class="yellow">普通会员</span></td>
+                  <td><a href="" class="look">查看</a></td>
+                </tr>
+                <tr>
+                  <td>广东惠州市</td>
+                  <td><div class="jian2">17吨</div></td>
+                  <td>广西桂林市</td>
+                  <td>不锈钢罐车</td>
+                  <td>专程车</td>
+                  <td>06-20</td>
+                  <td><span class="yellow">普通会员</span></td>
+                  <td><a href="" class="look">查看</a></td>
+                </tr>
+              </table>
+        </div> -->
+    </div>
+</div>
+<!--会员中心end-->
+<!--内容end-->
+<div class="clear"></div>
+<!--底部-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--底部-->
+<footer>
+    <div class="footer">
+        <div class="foot1">
+            <div class="center relative">
+                <ul>
+                    <li><a href="http://www.weiyun5.com/">首页</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/carSource/index">车源信息</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/goodSource/index">货源信息</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/article/index">行业资讯</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/enterprise/index">企业展示</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/carServe/index">车辆服务</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/about?type=about">关于我们</a></li>
+                </ul>
+                <p>联系电话：0546-6262766&nbsp;&nbsp; &nbsp; 信息咨询：0546-6262766&nbsp; &nbsp; &nbsp; 物流咨询：0546-6262766&nbsp; &nbsp;&nbsp;  传真：0546-6262766<br />
+                    在线QQ:983182232&nbsp;&nbsp; &nbsp; 邮箱:dyrenhe@126.com<br />
+                    ©2014-2017&nbsp;&nbsp; &nbsp; 承办企业：东营人和物流有限公司&nbsp;&nbsp; &nbsp; All Rights Reserved<br />
+                    地址：山东省东营市广饶县经济开发区</p>
+                <div class="erweima"><img src="http://www.weiyun5.com/resources/mall/images/erweima.jpg" width="127" height="126" /><span>关注微信公众号<br />
+快速找车、找货</span></div>
+            </div>
+        </div>
+        <div class="foot2">
+            <div class="center">
+                <p>备案信息：鲁ICP备13030353号-1</p>
+                <script type="text/javascript">
+                    var _hmt = _hmt || [];
+                    (function() {
+                        var hm = document.createElement("script");
+                        hm.src = "https://hm.baidu.com/hm.js?26870a68ef8e0499a9da867f5680699a";
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(hm, s);
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="main-im">
+        <div id="open_im" class="open-im"></div>
+        <div class="im_main" id="im_main">
+            <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭"></a></div>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2665502892&site=qq&menu=yes" class="im-qq qq-a" title="在线QQ客服" target="_blank">
+                <div class="qq-container"></div>
+                <div class="qq-hover-c"><img class="img-qq" src="http://www.weiyun5.com/resources/mall/images/qq.png"></div>
+                <span> QQ在线咨询</span> </a>
+            <div class="im-tel">
+                <div>售前咨询热线</div>
+                <div class="tel-num">0546-6262766</div>
+                <div>服务时间</div>
+                <div class="tel-num">7x24小时</div>
+            </div>
+            <div class="im-footer" style="position:relative">
+                <div class="weixing-container">
+                    <div class="weixing-show">
+                        <div class="weixing-txt">手机扫一扫<br>下载安卓版APP</div>
+                        <img class="weixing-ma" src="http://www.weiyun5.com/resources/mall/images/weiyun5_android_v1.0.png">
+                        <div class="weixing-sanjiao"></div>
+                        <div class="weixing-sanjiao-big"></div>
+                    </div>
+                </div>
+                <div class="go-top"><a href="javascript:;" title="返回顶部"></a> </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('#close_im').bind('click',function(){
+                $('#main-im').css("height","0");
+                $('#im_main').hide();
+                $('#open_im').show();
+            });
+            $('#open_im').bind('click',function(e){
+                $('#main-im').css("height","272");
+                $('#im_main').show();
+                $(this).hide();
+            });
+            $('.go-top').bind('click',function(){
+                $(window).scrollTop(0);
+            });
+            $(".weixing-container").bind('mouseenter',function(){
+                $('.weixing-show').show();
+            })
+            $(".weixing-container").bind('mouseleave',function(){
+                $('.weixing-show').hide();
+            });
+        });
+    </script>
+</footer>
+<!--底部 end-->
+<!--底部 end-->
+<script type="text/javascript" src="centerPublic.js"></script>
+<!-- 会员中心左侧 -->
+<!-- <script> -->
+<!-- 	$(".center_l li").click(function(){ -->
+<!-- 		$(".center_l li").removeClass("center_on"); -->
+<!-- 		$(this).addClass("center_on"); -->
+<!-- 		queryMember($(this).val()); -->
+<!-- 		}); -->
+<!-- </script>  -->
+<!--会员中心左侧-->
+<script>
+    $(".center_on1").click(function(){
+        $(".menu_body").toggle();
+    });
+    $(".center_l li").click(function(){
+        $(".center_l li").removeClass("center_on");
+        $(this).addClass("center_on");
+        $(".menu_body li").removeClass("hover");
+        $(this).addClass("hover");
+        queryMember($(this).val());
+    });
+</script>
+<script src="../js/vue/vue.js"></script>
+<script src="../js/axios.min.js"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript">
+    let vm = new Vue({
+        el: "#account",
+        data: {
+            wlkg,
+            user: {},
+            orders:[],
+            goods: [],
+            cars: [],
+            total: 0,
+            totalPage: 0,
+            query: {
+                page: 1,
+                rows: 10,
+                userId: 1   //从token中取出并传下去
+            }
+        },
+        async created() {
+            /*try {
+                const resp = await wlkg.http.get("/auth/verify");
+                this.user = resp.data;
+            } catch {
+            }*/
+            this.loadOrder();
+        },
+        methods: {
+            /* isLogin() {
+                 return new Promise((resolve, reject) => {
+                     wlkg.http.get("/auth/verify").then(resp => {
+                         resolve(resp);
+                     }).catch(error => {
+                         if (this.user) {
+                             // 重新登录
+                             console.log("已过期");
+                             window.location.href = "http://www.wlkg.com/login.html?returnUrl=" + window.location.href;
+                         }
+                         reject(error);
+                     })
+                 })
+                 return wlkg.http.get("/auth/verify");
+             },*/
+            loadOrder() {
+                wlkg.http.get("/goods/queryByUserId?" + wlkg.stringify(this.query)).then(({data: {items, total, totalPage}}) => {
+                    this.goods = items;
+                    this.total = total;
+                    this.totalPage = totalPage;
+                }).catch(() => this.goods = []);
+                wlkg.http.get("/car/queryByUserId?" + wlkg.stringify(this.query)).then(({data: {items, total, totalPage}}) => {
+                    this.cars = items;
+                    this.total = total;
+                    this.totalPage = totalPage;
+                }).catch(() => this.cars = []);
+            },
+            // loadOrder(){
+            //     $.ajax({
+            //         type:'get',//请求方式,get/post/delete等.
+            //         url:'http://api.wlkg.com/api/goods/queryall',//后台的url接口地址.
+            //         contentType:'application/json;charset=UTF-8',
+            //         dataType:'json',
+            //         success:function(resp){
+            //             this.goods=resp.data.items;
+            //             this.total=resp.data.total;
+            //             this.totalPage=resp.data.totalPage;
+            //         },
+            //         error:function(){
+            //             //失败时的回调方法
+            //             alert("请求失败");
+            //         }
+            //     });
+            // },
+            formatDate: wlkg.formatDate,
+            formatPrice: wlkg.formatPrice,
+            /*getTotalPrice(order){
+                return order.orderDetails.map(d => d.num * d.price).reduce((v1,v2) => v1 + v2, 0);
+            },*/
+            navPage() {
+                this.query.page = this.$refs.page.value;
+            },
+            index(i) {
+                if (this.query.page <= 3 || this.totalPage <= 5) {
+                    // 如果当前页小于等于3或者总页数小于等于5
+                    return i;
+                } else if (this.query.page > this.totalPage - 3) {
+                    //当前页码大于totalPage-3，应该从totalPage-5开始
+                    return this.totalPage - 5 + i;
+                } else if (this.query.page > 3) {
+                    // 如果当前页大于3，应该从page-3开始
+                    return this.query.page - 3 + i;
+                }
+            },
+            prevPage() {
+                if (this.query.page > 1) {
+                    this.query.page--
+                }
+            },
+            nextPage() {
+                if (this.query.page < this.totalPage) {
+                    this.query.page++
+                }
+            },
+        },
+        watch: {
+            'query': {
+                deep: true,
+                handler() {
+                    this.loadOrder();
+                }
+            }
+        },
+    });
+</script>
+</body>
+</html>

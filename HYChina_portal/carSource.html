@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <title>危运网-专业的危险品物流平台</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="keywords" content="危运网,化工物流,危险品物流,危险品运输,成品油运输,化学危险品运输,化学危险品物流,危化品运输,危险化学品运输" />
+    <meta name="description" content="危运网，危险品运输专业平台，是中国专业、信息更新及时的危险品物流服务平台之一。中国危运网开发出专业的微信端危险品运输配货平台，现已支持所有智能手机，可免费使用。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/bui/assets/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/layer/layer.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/mall.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/validate.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/util.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/ss.js"></script>
+    <link href="http://www.weiyun5.com/resources/mall/css/module.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/header.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/alert.css" rel="stylesheet" type="text/css" />
+
+    <!--banner end -->
+</head>
+<body>
+<div class="page">
+    <!--引入头部公共部分-->
+    <script src="js/header.js"></script>
+<!--头部 end-->
+<div class="clear"></div>
+<div class="page1" id="account">
+    <div class="center">
+        <div class="nav-tle"><a href="http://www.weiyun5.com/">首页</a>  >  车源信息</div>
+        <div class="s-screen">
+            <div class="s-open"><img src="http://www.weiyun5.com//resources/mall/images/s-sq_03.jpg" /></div>
+            <div class="s-stop"><img src="http://www.weiyun5.com//resources/mall/images/s-zk_03.jpg" /></div>
+            <form id="carSource">
+                <table border="0" id="Tab2" class="Menubox">
+                    <tr>
+                        <td class="borrow_list_td">起始地点：</td>
+                        <td><ul class="list-shai">
+                            <li>
+                                <input value="" name="depart" type="text" id="city-picker3" class="list-input1" readonly type="text" data-toggle="city-picker" placeholder="请输入出发地"/>
+                                <!--         <input name="startAddr" type="text" placeholder="请选择出发地" class="list-input1" onclick="setTab('one',2,3,'1')"/> -->
+                            </li>
+                            <li><img src="http://www.weiyun5.com/resources/mall/images/jiaohu.png" /></li>
+                            <li>
+                                <input value="" name="arrvie" type="text" id="city-picker3" class="list-input1" readonly type="text" data-toggle="city-picker" placeholder="请输入到达地"/>
+                                <!--         <input name="endAddr" type="text" placeholder="请选择目的地" class="list-input1" onclick="setTab('one',2,3,'1')"/> -->
+                            </li>
+                            <li><a href="javascript:value(0)" onclick="initList();" class="btn-sure">确定</a></li>
+                        </ul></td>
+                    </tr>
+                </table>
+                <table border="0" id="Tab2" class="Menubox">
+                    <tr>
+                        <td class="borrow_list_td">车辆类型：<input type="hidden" id="two" name="type" value="-1"/></td>
+                        <td id="two1" onclick="setTab('two',1,9,'-1')" class="hover">不限</td>
+
+                        <td id="two2" onclick="setTab('two',2,9,'1')">不锈钢罐车</td>
+
+                        <td id="two3" onclick="setTab('two',3,9,'2')">铝罐车</td>
+
+                        <td id="two4" onclick="setTab('two',4,9,'3')">压力罐车</td>
+
+                        <td id="two5" onclick="setTab('two',5,9,'4')">铁罐车</td>
+
+                        <td id="two6" onclick="setTab('two',6,9,'5')">保温罐车</td>
+
+                        <td id="two7" onclick="setTab('two',7,9,'6')">平板车</td>
+
+                        <td id="two8" onclick="setTab('two',8,9,'7')">高栏车</td>
+
+                        <td id="two9" onclick="setTab('two',9,9,'8')">厢式车</td>
+
+                    </tr>
+                </table>
+                <table border="0" class="Contentbox" style="display: none;" >
+                    <tr>
+                        <td id="con_two_1" class="hover">&nbsp;</td>
+
+                        <td id="con_two_2" style="display:none">&nbsp;</td>
+
+                        <td id="con_two_3" style="display:none">&nbsp;</td>
+
+                        <td id="con_two_4" style="display:none">&nbsp;</td>
+
+                        <td id="con_two_5" style="display:none">&nbsp;</td>
+
+                        <td id="con_two_6" style="display:none">&nbsp;</td>
+
+                        <td id="con_two_7" style="display:none">&nbsp;</td>
+
+                        <td id="con_two_8" style="display:none">&nbsp;</td>
+
+                        <td id="con_two_9" style="display:none">&nbsp;</td>
+
+                    </tr>
+                </table>
+                <table border="0" id="Tab2" class="Menubox s-hide">
+                    <tr>
+                        <td class="borrow_list_td">剩余重量：<input type="hidden" id="three" name="load" value="-1"/></td>
+                        <td id="three1" onclick="setTab('three',1,6,'-1')" class="hover">不限</td>
+                        <td id="three2" onclick="setTab('three',2,6,'2')" class="">30吨以下</td>
+                        <td id="three3" onclick="setTab('three',3,6,'3')" class="">30-300吨</td>
+                        <td id="three4" onclick="setTab('three',4,6,'4')" class="">300-1000吨</td>
+                        <td id="three5" onclick="setTab('three',5,6,'5')" class="">1000-2000吨</td>
+                        <td id="three6" onclick="setTab('three',6,6,'6')" class="">2000吨以上</td>
+                        <!--         <td><ul class="list-shai"> -->
+
+                        <!--       <li> -->
+                        <!--         <input name="startLoad" type="text" class="list-input2" onclick="setTab('three',8,6,'8')"/> -->
+                        <!--       </li> -->
+                        <!--       <li>-</li> -->
+                        <!--       <li> -->
+                        <!--         <input name="endLoad" type="text" class="list-input2" onclick="setTab('three',8,6,'8')"/> -->
+                        <!--       </li> -->
+                        <!--       <li><a href="javascript:value(0)" class="btn-sure">确定</a></li> -->
+                        <!--     </ul></td> -->
+                    </tr>
+                </table>
+                <table border="0" class="Contentbox" style="display: none;"  >
+                    <tr>
+                        <td id="con_three_1" class="hover">&nbsp;</td>
+                        <td id="con_three_2" style="display:none">&nbsp;</td>
+                        <td id="con_three_3" style="display:none">&nbsp;</td>
+                        <td id="con_three_4" style="display:none">&nbsp;</td>
+                        <td id="con_three_5" style="display:none">&nbsp;</td>
+                        <td id="con_three_6" style="display:none">&nbsp;</td>
+                        <td id="con_three_7" style="display:none">&nbsp;</td>
+                        <td id="con_three_8" style="display:none">&nbsp;</td>
+                    </tr>
+                </table>
+                <table border="0" id="Tab2" class="Menubox s-hide">
+                    <tr>
+                        <td class="borrow_list_td">路线类型：<input type="hidden" id="four" name="sourceType" value="-1"/></td>
+                        <td id="four1" onclick="setTab('four',1,3,'-1')" class="hover">不限</td>
+
+                        <td id="four2" onclick="setTab('four',2,3,'2')" >专程车</td>
+
+                        <td id="four3" onclick="setTab('four',3,3,'3')" >回程车</td>
+
+                    </tr>
+                </table>
+                <table border="0" class="Contentbox" style="display: none;"  >
+                    <tr>
+                        <td id="con_four_1" class="hover">&nbsp;</td>
+
+                        <td id="con_four_2" style="display:none">&nbsp;</td>
+
+                        <td id="con_four_3" style="display:none">&nbsp;</td>
+
+                    </tr>
+                </table>
+                <table border="0" id="Tab2" class="Menubox s-hide">
+                    <tr>
+                        <td class="borrow_list_td">运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：<input type="hidden" id="five" name="freight" value="-1"/></td>
+                        <td id="five1" onclick="setTab('five',1,6,'-1')" class="hover">不限</td>
+                        <td id="five2" onclick="setTab('five',2,6,'2')">面议</td>
+                        <td id="five3" onclick="setTab('five',3,6,'3')">5000元以下</td>
+                        <td id="five4" onclick="setTab('five',4,6,'4')">5000-10000元</td>
+                        <td id="five5" onclick="setTab('five',5,6,'5')">10000-15000元</td>
+                        <td id="five6" onclick="setTab('five',6,6,'6')">15000元以上</td>
+                        <!--         <td><ul class="list-shai"> -->
+
+                        <!--       <li> -->
+                        <!--         <input name="startFreight" type="text" class="list-input2" onclick="setTab('five',8,6,'8')"/> -->
+                        <!--       </li> -->
+                        <!--       <li>-</li> -->
+                        <!--       <li> -->
+                        <!--         <input name="endFreight" type="text" class="list-input2" onclick="setTab('five',8,6,'8')"/> -->
+                        <!--       </li> -->
+                        <!--       <li><a href="javascript:value(0)" class="btn-sure">确定</a></li> -->
+                        <!--     </ul></td> -->
+                    </tr>
+                </table>
+                <table border="0" class="Contentbox" style="display: none;"  >
+                    <tr>
+                        <td id="con_five_1" class="hover">&nbsp;</td>
+                        <td id="con_five_2" style="display:none">&nbsp;</td>
+                        <td id="con_five_3" style="display:none">&nbsp;</td>
+                        <td id="con_five_4" style="display:none">&nbsp;</td>
+                        <td id="con_five_5" style="display:none">&nbsp;</td>
+                        <td id="con_five_6" style="display:none">&nbsp;</td>
+                        <td id="con_five_7" style="display:none">&nbsp;</td>
+                        <td id="con_five_8" style="display:none">&nbsp;</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+<!--        <div id="dataList" class="right-footer"><img src="http://www.weiyun5.com/resources/mall/image/load.gif"/></div>-->
+        <div id="dataList" class="right-footer">
+            <table border="0" width="100%" class="list-tab">
+                <tbody>
+                <tr class="f5 list-tr">
+                    <td>出发地</td>
+                    <td>-&gt;</td>
+                    <td>到达地</td>
+                    <td>车辆类型</td>
+                    <td>运输方式</td>
+                    <td>发车时间</td>
+                    <td>会员类型</td>
+                    <td>查看</td>
+                </tr>
+
+
+                <tbody v-for="(o,i) in cars" :key="i">
+                <tr class="list-tr" >
+                    <td>{{o.startPlace}}</td>
+                    <td>-&gt;</td>
+                    <td>{{o.endPlace}}</td>
+                    <td>
+                        <span v-if="o.carType ===1">不锈钢罐车</span>
+                        <span v-if="o.carType ===2">铝罐车</span>
+                        <span v-if="o.carType ===3">压力罐车</span>
+                        <span v-if="o.carType ===4">铁罐车</span>
+                        <span v-if="o.carType ===5">保温罐车</span>
+                        <span v-if="o.carType ===6">平板车</span>
+                        <span v-if="o.carType ===7">高栏车</span>
+                        <span v-if="o.carType ===8">厢式车</span>
+                    </td>
+                    <td>
+                        <span v-if="o.lineType ===1">专程车</span>
+                        <span v-if="o.lineType ===2">回程车</span>
+                    </td>
+                    <td>{{formatDate(o.createTime)}}</td>
+                    <td>普通会员</td>
+                    <td><a :href="'carinfo.html?id='+o.id" class="look">查看</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="base_widget_paging">
+                <div class="paging_widget_2">
+                    <ul>
+                        <li class="{prev:true,disabled:query.page === 1}">
+                            <a @click="prevPage">«上一页</a>
+                        </li>
+                        <li :class="{active:index(i) === query.page}" v-for="i in Math.min(5,totalPage)" :key="i">
+                            <a @click="query.page=index(i)">{{index(i)}}</a>
+                        </li>
+                        <li class="dotted" v-show="totalPage>5"><span>...</span></li>
+                        <li :class="{next:true,disabled:query.page === totalPage}">
+                            <a @click="nextPage">下一页»</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <span>共{{totalPage}}页&nbsp;</span>
+                        <span>
+            到第
+            <input type="text" class="page-num" :value="query.page">
+            页 <button class="page-confirm" @click="navPage">确定</button>
+        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                    <div class="base_widget_paging"><div class="paging_widget_2"><ul><li class="next"><a href="javascript:value(0)">&lt;</a></li><li class="page selected "><a href="javascript:value(0)">1</a></li><li class="page"><a href="javascript:doJumpPage(2)">2</a></li><li class="page"><a href="javascript:doJumpPage(3)">3</a></li><li class="page"><a href="javascript:doJumpPage(4)">4</a></li><li class="page"><a href="javascript:doJumpPage(5)">5</a></li><li class="page"><a href="javascript:doJumpPage(6)">6</a></li><li class="page"><a href="javascript:doJumpPage(7)">7</a></li><li class="page"><a href="javascript:doJumpPage(8)">8</a></li><li class="page"><a href="javascript:doJumpPage(9)">9</a></li><li class="page"><a href="javascript:doJumpPage(10)">10</a></li><li class="next"><a href="javascript:doJumpPage(2)">&gt;</a></li></ul></div></div>
+            -->
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<!--底部-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--底部-->
+<footer>
+    <div class="footer">
+        <div class="foot1">
+            <div class="center relative">
+                <ul>
+                    <li><a href="http://www.weiyun5.com/">首页</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/carSource/index">车源信息</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/goodSource/index">货源信息</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/article/index">行业资讯</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/enterprise/index">企业展示</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/carServe/index">车辆服务</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/about?type=about">关于我们</a></li>
+                </ul>
+                <p>联系电话：0546-6262766&nbsp;&nbsp; &nbsp; 信息咨询：0546-6262766&nbsp; &nbsp; &nbsp; 物流咨询：0546-6262766&nbsp; &nbsp;&nbsp;  传真：0546-6262766<br />
+                    在线QQ:983182232&nbsp;&nbsp; &nbsp; 邮箱:dyrenhe@126.com<br />
+                    ©2014-2017&nbsp;&nbsp; &nbsp; 承办企业：东营人和物流有限公司&nbsp;&nbsp; &nbsp; All Rights Reserved<br />
+                    地址：山东省东营市广饶县经济开发区</p>
+                <div class="erweima"><img src="http://www.weiyun5.com/resources/mall/images/erweima.jpg" width="127" height="126" /><span>关注微信公众号<br />
+快速找车、找货</span></div>
+            </div>
+        </div>
+        <div class="foot2">
+            <div class="center">
+                <p>备案信息：鲁ICP备13030353号-1</p>
+                <script type="text/javascript">
+                    var _hmt = _hmt || [];
+                    (function() {
+                        var hm = document.createElement("script");
+                        hm.src = "https://hm.baidu.com/hm.js?26870a68ef8e0499a9da867f5680699a";
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(hm, s);
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="main-im">
+        <div id="open_im" class="open-im"></div>
+        <div class="im_main" id="im_main">
+            <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭"></a></div>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2665502892&site=qq&menu=yes" class="im-qq qq-a" title="在线QQ客服" target="_blank">
+                <div class="qq-container"></div>
+                <div class="qq-hover-c"><img class="img-qq" src="http://www.weiyun5.com/resources/mall/images/qq.png"></div>
+                <span> QQ在线咨询</span> </a>
+            <div class="im-tel">
+                <div>售前咨询热线</div>
+                <div class="tel-num">0546-6262766</div>
+                <div>服务时间</div>
+                <div class="tel-num">7x24小时</div>
+            </div>
+            <div class="im-footer" style="position:relative">
+                <div class="weixing-container">
+                    <div class="weixing-show">
+                        <div class="weixing-txt">手机扫一扫<br>下载安卓版APP</div>
+                        <img class="weixing-ma" src="http://www.weiyun5.com/resources/mall/images/weiyun5_android_v1.0.png">
+                        <div class="weixing-sanjiao"></div>
+                        <div class="weixing-sanjiao-big"></div>
+                    </div>
+                </div>
+                <div class="go-top"><a href="javascript:;" title="返回顶部"></a> </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('#close_im').bind('click',function(){
+                $('#main-im').css("height","0");
+                $('#im_main').hide();
+                $('#open_im').show();
+            });
+            $('#open_im').bind('click',function(e){
+                $('#main-im').css("height","272");
+                $('#im_main').show();
+                $(this).hide();
+            });
+            $('.go-top').bind('click',function(){
+                $(window).scrollTop(0);
+            });
+            $(".weixing-container").bind('mouseenter',function(){
+                $('.weixing-show').show();
+            })
+            $(".weixing-container").bind('mouseleave',function(){
+                $('.weixing-show').hide();
+            });
+        });
+    </script>
+</footer>
+<!--底部 end-->
+<!--底部 end-->
+<script type="text/javascript">
+    function initList(param) {
+        param+="&"+$("#carSource").serialize();
+        $.ajaxPost("http://www.weiyun5.com/carSource/queryList", param, callback);
+    }
+    function callback(data) {
+        $("#dataList").html(data);
+    }
+    $(function() {
+        initList(param);
+    });
+</script>
+<!--菜单选项-->
+<script type="text/javascript">
+    /*第一种形式 第二种形式 更换显示样式*/
+    function setTab(name,cursel,n,value) {
+        $("#" + name).val(value);
+        for (var i=1; i<=n; i++) {
+            var menu=document.getElementById(name+i);
+            var con=document.getElementById("con_"+name+"_"+i);
+            menu.className=i==cursel?"hover":"";
+            con.style.display=i==cursel?"block":"none";
+        }
+        initList();
+    }
+</script>
+<!--招聘-->
+<script>
+    $(".s-open").click(function(){
+        $(".s-open").hide();
+        $(".s-stop").show();
+        $(".s-hide").hide();
+    });
+    $(".s-stop").click(function(){
+        $(".s-stop").hide();
+        $(".s-open").show();
+        $(".s-hide").show();
+    });
+</script>
+<script src="./js/vue/vue.js"></script>
+<script src="./js/axios.min.js"></script>
+<script src="./js/common.js"></script>
+<script type="text/javascript">
+    let vm = new Vue({
+        el: "#account",
+        data: {
+            wlkg,
+            user: {},
+            orders:[],
+            cars: [],
+            total: 0,
+            totalPage: 0,
+            query: {
+                page: 1,
+                rows: 5
+            }
+        },
+        async created() {
+            /*try {
+                const resp = await wlkg.http.get("/auth/verify");
+                this.user = resp.data;
+            } catch {
+            }*/
+            this.loadOrder();
+        },
+        methods: {
+            /* isLogin() {
+                 return new Promise((resolve, reject) => {
+                     wlkg.http.get("/auth/verify").then(resp => {
+                         resolve(resp);
+                     }).catch(error => {
+                         if (this.user) {
+                             // 重新登录
+                             console.log("已过期");
+                             window.location.href = "http://www.wlkg.com/login.html?returnUrl=" + window.location.href;
+                         }
+                         reject(error);
+                     })
+                 })
+                 return wlkg.http.get("/auth/verify");
+             },*/
+            loadOrder() {
+                wlkg.http.get("/car/queryall?" + wlkg.stringify(this.query)).then(({data: {items, total, totalPage}}) => {
+                    this.cars = items;
+                    this.total = total;
+                    this.totalPage = totalPage;
+                }).catch(() => this.cars = [])
+            },
+            // loadOrder(){
+            //     $.ajax({
+            //         type:'get',//请求方式,get/post/delete等.
+            //         url:'http://api.wlkg.com/api/goods/queryall',//后台的url接口地址.
+            //         contentType:'application/json;charset=UTF-8',
+            //         dataType:'json',
+            //         success:function(resp){
+            //             this.goods=resp.data.items;
+            //             this.total=resp.data.total;
+            //             this.totalPage=resp.data.totalPage;
+            //         },
+            //         error:function(){
+            //             //失败时的回调方法
+            //             alert("请求失败");
+            //         }
+            //     });
+            // },
+            formatDate: wlkg.formatDate,
+            formatPrice: wlkg.formatPrice,
+            /*getTotalPrice(order){
+                return order.orderDetails.map(d => d.num * d.price).reduce((v1,v2) => v1 + v2, 0);
+            },*/
+            navPage() {
+                this.query.page = this.$refs.page.value;
+            },
+            index(i) {
+                if (this.query.page <= 3 || this.totalPage <= 5) {
+                    // 如果当前页小于等于3或者总页数小于等于5
+                    return i;
+                } else if (this.query.page > this.totalPage - 3) {
+                    //当前页码大于totalPage-3，应该从totalPage-5开始
+                    return this.totalPage - 5 + i;
+                } else if (this.query.page > 3) {
+                    // 如果当前页大于3，应该从page-3开始
+                    return this.query.page - 3 + i;
+                }
+            },
+            prevPage() {
+                if (this.query.page > 1) {
+                    this.query.page--
+                }
+            },
+            nextPage() {
+                if (this.query.page < this.totalPage) {
+                    this.query.page++
+                }
+            },
+        },
+        watch: {
+            'query': {
+                deep: true,
+                handler() {
+                    this.loadOrder();
+                }
+            }
+        },
+    });
+</script>
+</body>
+</html>

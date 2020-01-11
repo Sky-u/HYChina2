@@ -1,0 +1,309 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <script>
+        $(function() {
+            var editor1 = KindEditor.create('textarea[name="content"]', {
+                cssPath : 'http://www.weiyun5.com/resources/kindeditor/plugins/code/prettify.css',
+                uploadJson : 'http://www.weiyun5.com/backstage/email/uploadJson',
+                fileManagerJson : 'http://www.weiyun5.com/backstage/email/fileManagerJson',
+                afterCreate : function() {
+                    this.sync();
+                },
+                afterBlur:function(){
+                    this.sync();
+                }
+            });
+            $("#up").each(function(v){
+                var obj = this;
+                var uploadbutton = KindEditor.uploadbutton({
+                    button : obj,
+                    fieldName : 'imgFile',
+                    url : 'http://www.weiyun5.com/backstage/email/uploadJson',
+                    afterUpload : function(data) {
+                        if (data.error === 0) {
+                            var url = KindEditor.formatUrl(data.url, 'absolute');
+                            KindEditor('#img').val(url.substring(5));
+                            document.getElementById("imgTest").src='http://www.weiyun5.com/'+url.substring(5);
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                    afterError : function(str) {
+                        alert('自定义错误信息: ' + str);
+                    }
+                });
+                uploadbutton.fileBox.change(function(e) {
+                    uploadbutton.submit();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="center_r">
+    <!---企业信息--->
+    <div class="hyxq_title"><h1>企业信息</h1></div>
+    <div class="qyxx">
+        <form id="enterprise">
+            <input name="id" type="hidden" value="5143">
+            <ul>
+                <li><span class="qy_l">公司名称：</span><input name="enterprise" type="text" class="sr_k" value="HELLO" placeholder="建议输入公司名称"></li>
+                <li><span class="qy_l">公司网址：</span><input name="url" type="text" class="sr_k" value="" placeholder="建议输入公司网址"></li>
+                <li><span class="qy_l">logo：</span>
+
+                    <img id="imgTest" src="http://www.weiyun5.com/resources/mall/images/add-img.jpg" width="241" height="145" />
+
+                    <input type="hidden" name="logoImg" id="img" value="" readonly="readonly" />
+                    <input type="button" id="up" value="上传" />
+                </li>
+                <li><span class="qy_l">公司地址：</span>
+                    <select id="parent" name="province" class="textfont"  onchange="genCity('city','area','textfont');">
+                        <option value="-1">请选择省份</option>
+
+                        <option value="110000" >北京市</option>
+
+                        <option value="120000" >天津市</option>
+
+                        <option value="130000" >河北省</option>
+
+                        <option value="140000" >山西省</option>
+
+                        <option value="150000" >内蒙古自治区</option>
+
+                        <option value="210000" >辽宁省</option>
+
+                        <option value="220000" >吉林省</option>
+
+                        <option value="230000" >黑龙江省</option>
+
+                        <option value="310000" >上海市</option>
+
+                        <option value="320000" >江苏省</option>
+
+                        <option value="330000" >浙江省</option>
+
+                        <option value="340000" >安徽省</option>
+
+                        <option value="350000" >福建省</option>
+
+                        <option value="360000" >江西省</option>
+
+                        <option value="370000" >山东省</option>
+
+                        <option value="410000" >河南省</option>
+
+                        <option value="420000" >湖北省</option>
+
+                        <option value="430000" >湖南省</option>
+
+                        <option value="440000" >广东省</option>
+
+                        <option value="450000" >广西壮族自治区</option>
+
+                        <option value="460000" >海南省</option>
+
+                        <option value="500000" >重庆市</option>
+
+                        <option value="510000" >四川省</option>
+
+                        <option value="520000" >贵州省</option>
+
+                        <option value="530000" >云南省</option>
+
+                        <option value="540000" >西藏自治区</option>
+
+                        <option value="610000" >陕西省</option>
+
+                        <option value="620000" >甘肃省</option>
+
+                        <option value="630000" >青海省</option>
+
+                        <option value="640000" >宁夏回族自治区</option>
+
+                        <option value="650000" >新疆维吾尔自治区</option>
+
+                        <option value="710000" >台湾省</option>
+
+                        <option value="810000" >香港特别行政区</option>
+
+                        <option value="820000" >澳门特别行政区</option>
+
+                    </select>
+                    <span id="cspan">
+
+		    <select name="city" id="child_parent" class="textfont" onchange="genArea();">
+		    <option value="-1">请选择市区</option>
+
+		    </select>
+			</span>
+                    <span id="aspan">
+
+		    <select name="area" class="textfont">
+		    <option value="-1">请选择地区</option>
+
+		    </select>
+
+			</span>
+                </li>
+                <li><span class="qy_l">详细地址：</span><input name="address" type="text" class="sr_k" value=""  placeholder="建议输入详细地址"><a href="javascript:value(0);" onclick="toMap();"><img src="http://www.weiyun5.com/resources/mall/images/ad.png" width="24" height="23" class="ad" /></a></li>
+                <li><span class="qy_l">公司类型：</span>
+                    <select class="textfont" name="type">
+                        <option value="-1">请选择公司类型</option>
+
+                        <option value="1" >企业单位</option>
+
+                        <option value="2" >事业单位或社会团体</option>
+
+                        <option value="3" >个体经营</option>
+
+                        <option value="4" >其他</option>
+
+                    </select>
+                </li>
+                <li><span class="qy_l">公司规模：</span>
+                    <select class="textfont" name="scale">
+                        <option value="-1">请选择公司规模</option>
+
+                        <option value="1" >1-49</option>
+
+                        <option value="2" >50-99</option>
+
+                        <option value="3" >100-499</option>
+
+                        <option value="4" >500-999</option>
+
+                        <option value="5" >1000以上</option>
+
+                    </select>
+                </li>
+                <li><span class="qy_l">主营业务：</span>
+                    <input type="checkbox" name="business"  value="1"><span>车源企业</span>
+                    <input type="checkbox" name="business"  value="2"><span>货源企业</span>
+                </li>
+                <li><span class="qy_l">经营范围：</span><input name="range" type="text" class="sr_k" value=""  placeholder="建议输入经营范围"></li>
+                <li><span class="qy_l">成立年份：</span><input name="establish" type="text" class="sr_k" value="" placeholder="建议输入成立年份"></li>
+                <li><span class="qy_l">注册资金：</span>
+                    <select class="textfont" name="capitalType">
+                        <option value="-1">请选择币种</option>
+
+                        <option value="1" >人民币</option>
+
+                        <option value="2" >港币</option>
+
+                        <option value="3" >台币</option>
+
+                        <option value="4" >美元</option>
+
+                        <option value="5" >欧元</option>
+
+                        <option value="6" >英镑</option>
+
+                    </select>
+                    <input name="capital" type="text" class="sr_k" value="" placeholder="建议输入注册资金"></li>
+                <li><span class="qy_l">公司邮编：</span><input name="zip" type="text" class="sr_k" value="" placeholder="建议输入公司邮编"></li>
+                <li><span class="qy_l">公司电话：</span><input name="mobile" type="text" class="sr_k" value="" placeholder="建议输入公司电话"></li>
+                <li><span class="qy_l">公司传真：</span><input name="fax" type="text" class="sr_k" value="" placeholder="建议输入公司传真"></li>
+                <li><span class="qy_l">公司邮箱：</span><input name="email" type="text" class="sr_k" value="" placeholder="建议输入公司邮箱"></li>
+                <li><span class="qy_l">长跑路线：</span><input name="commonRoute" type="text" class="sr_k" value="" placeholder="建议输入长跑路线"><div class="red-text">注：请用" | "隔开</div></li>
+                <li><span class="qy_l">公司介绍：</span><textarea name="content" cols="100" rows="8" style="width:700px;height:500px;visibility:hidden;"></textarea></li>
+                <li><input type="button" onclick="updateEnterprise();" value="修改企业信息" class="ljfb"/></li>
+            </ul>
+        </form>
+    </div>
+    <!--企业信息end-->
+</div>
+<script>
+    function toMap(){
+        window.open("http://www.weiyun5.com/map/coordinate?Xcoordinate=&Ycoordinate=");
+    }
+    function updateEnterprise(){
+        $.ajax({
+            type:'post',
+            url:'http://www.weiyun5.com/foreground/enterprise/checkBasic',
+            data:$("#enterprise").serialize(),
+            success:function(data) {
+                if (data == "success") {
+                    layer.alert("修改企业信息成功",function(index){layer.close(index);queryMember(10);});
+                } else {
+                    var error = [];
+                    for (var key in data) {
+                        error.push(data[key] + "\n");
+                    }
+                    layer.alert(error.join(""));
+                }
+            }
+        });
+    }
+    /**
+     * 异步加载全国地市
+     */
+    var cityName='';
+    var areaName='';
+    var className='';
+    function genCity(one,two,three){
+        cityName=one;
+        areaName=two;
+        className=three;
+        var provinceid=byId("parent").value;
+        if(provinceid!=-1){
+            $.ajax({
+                type:'post',
+                url:'http://www.weiyun5.com/genCity',
+                data:'provinceid='+provinceid,
+                success:function(data) {
+                    if (data["success"] == "success") {
+                        var select="<select name='"+cityName+"' id='child_parent' class='"+className+"' onchange='genArea();'><option value='-1'>请选择市区</option>";
+                        for(var i=0;i<data["city"].length;i++){
+                            select=select+"<option value='"+data["city"][i]["cityid"]+"'>"+data["city"][i]["city"]+"</option>"
+                        }
+                        select=select+"</select>";
+                        byId("cspan").innerHTML=select;
+                        byId("aspan").innerHTML='';
+                    } else {
+                        var error = [];
+                        for (var key in data) {
+                            error.push(data[key] + "\n");
+                        }
+                        layer.alert(error.join(""));
+                    }
+                }
+            });
+        }else{
+            byId("cspan").innerHTML='';
+            byId("aspan").innerHTML='';
+        }
+    }
+    function genArea(){
+        var cityid=byId("child_parent").value;
+        className=$("#child_parent").attr("class");
+        if(cityid!=-1){
+            $.ajax({
+                type:'post',
+                url:'http://www.weiyun5.com/genArea',
+                data:'cityid='+cityid,
+                success:function(data) {
+                    if (data["success"] == "success") {
+                        var select="<select name='"+areaName+"' class='"+className+"'><option value='-1'>请选择地区</option>";
+                        for(var i=0;i<data["area"].length;i++){
+                            select=select+"<option value='"+data["area"][i]["areaid"]+"'>"+data["area"][i]["area"]+"</option>"
+                        }
+                        select=select+"</select>";
+                        byId("aspan").innerHTML=select;
+                    } else {
+                        var error = [];
+                        for (var key in data) {
+                            error.push(data[key] + "\n");
+                        }
+                        layer.alert(error.join(""));
+                    }
+                }
+            });
+        }else{
+            byId("aspan").innerHTML='';
+        }
+    }
+</script>
+</body>
+</html>

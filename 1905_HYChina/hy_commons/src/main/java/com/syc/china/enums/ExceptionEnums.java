@@ -19,8 +19,9 @@ public enum ExceptionEnums {
 
     ACCOUNT_IS_NOT_EXIST(602,"账户不存在"),
 
-    USERNAME_OR_PASSWORD_ERROR(603,"用户名或密码错误");
+    USERNAME_OR_PASSWORD_ERROR(603,"用户名或密码错误"),
 
+    PASSWORD_IS_INCONSISTENT(604,"两次密码输入不一致");
     private int code;
     private String msg;
 }

@@ -2,19 +2,24 @@ package com.syc.china.service;
 
 import com.syc.china.enums.ExceptionEnums;
 import com.syc.china.exception.HyException;
+import com.syc.china.mapper.RoleMapper;
 import com.syc.china.mapper.UserDetailMapper;
 import com.syc.china.mapper.UserMapper;
 import com.syc.china.pojo.*;
+import com.syc.china.util.PasswordUtil;
 import com.syc.china.utils.NumberUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 /**
  * @author 汪梦瑶
@@ -36,17 +41,16 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private RoleMapper roleMapper;
+
 
     static final String KEY_PREFIX= "user:code:phone:";
 
 
-
-
-
-
-
-    /*
-        发送手机验证码
+    /**
+     * 发送手机验证码
+     * @param mobile
      */
     public void sendMobileCode(String mobile) {
         //生成随机验证码
@@ -60,83 +64,50 @@ public class UserService {
         amqpTemplate.convertAndSend("hychina.sms.exchange","sms.verify.code",msg);
     }
 
-    /*
-        注册
+
+    /**
+     * 注册
+     * @param user
+     * @param roleId
+     * @param confirmPwd
+     * @param code
+     * @return
      */
-    public void register(User user,String code) {
-        //1.检查验证码
+    @Transactional
+    public boolean register(User user, Long roleId,String confirmPwd,String code) {
+        //1.判断两次密码是否一致，不一致的话抛一个密码不一致的异常
+        if (!user.getPassword().equals(confirmPwd)){
+            throw new HyException(ExceptionEnums.PASSWORD_IS_INCONSISTENT);
+        }
+        //2.检查验证码
         String key=KEY_PREFIX+user.getPhone();
         String redisCode = redisTemplate.opsForValue().get(key);
         if (StringUtils.isBlank(redisCode)||!code.equals(redisCode)){
             throw new HyException(ExceptionEnums.REGISTER_CODE_IS_ERROR);
         }
-        //2.写入到数据库
+        //3.密码加密
+        String old_pwd = user.getPassword();
+        String new_pwd = PasswordUtil.encode(old_pwd);
+        user.setPassword(new_pwd);
+        user.setRegisterTime(new Date());
+        //4.写入到数据库
         int i = userMapper.insertSelective(user);
-
-        //3.删除redis中的验证码
+        //5.删除redis中的验证码
         if (i>0){
             redisTemplate.delete(key);
         }
-    }
-
-    /**
-     * 根据用户名查询用户是否存在
-     * @param username
-     * @return
-     */
-    public User getUserByUsername(String username) {
-        Example example=new Example(User.class);
-        example.createCriteria().andEqualTo("username",username);
-        List<User> users = userMapper.selectByExample(example);
-        if (users!=null){
-            return users.get(0);
-        }
-        return null;
+        //6.添加角色到hy_user_role表
+          //查询刚添加的用户id
+        User user1 = userMapper.selectOne(user);
+        Long userId = user1.getUserId();
+        Role role=new Role();
+        role.setRoleId(roleId);
+        role.setUserId(userId);
+        int insert = roleMapper.insert(role);
+        return insert>0?true:false;
     }
 
 
-    /**
-     * test
-     * @param username
-     * @return
-     */
-    public UserTest getUserByName(String username) {
-        //模拟数据库查询，正常情况此处是从数据库或者缓存查询。
-        return getMapByName(username);
-    }
-
-    /**
-     * 模拟数据库查询
-     * @param username
-     * @return
-     */
-    private UserTest getMapByName(String username){
-        //共添加两个用户，两个用户都是admin一个角色，
-        //wsl有query和add权限，zhangsan只有一个query权限
-        PermissionsTest permissions1 = new PermissionsTest("1","query");
-        PermissionsTest permissions2 = new PermissionsTest("2","add");
-        Set<PermissionsTest> permissionsSet = new HashSet<>();
-        permissionsSet.add(permissions1);
-        permissionsSet.add(permissions2);
-
-        RoleTest roleTest = new RoleTest("1","admin",permissionsSet);
-        Set<RoleTest> roleSet = new HashSet<>();
-        roleSet.add(roleTest);
-
-        UserTest userTest = new UserTest("1","wsl","123456",roleSet);
-        Map<String ,UserTest> map = new HashMap<>();
-        map.put(userTest.getUserName(), userTest);
-
-        PermissionsTest permissions3 = new PermissionsTest("3","query");
-        Set<PermissionsTest> permissionsSet1 = new HashSet<>();
-        permissionsSet1.add(permissions3);
-        RoleTest role1 = new RoleTest("2","user",permissionsSet1);
-        Set<RoleTest> roleSet1 = new HashSet<>();
-        roleSet1.add(role1);
-        UserTest user1 = new UserTest("2","zhangsan","123456",roleSet1);
-        map.put(user1.getUserName(), user1);
-        return map.get(username);
-    }
 
     /**
      * 完善会员信息
@@ -145,5 +116,47 @@ public class UserService {
     public void addUserDetail(UserDetail userDetail) {
         
 
+    }
+
+
+    /**
+     * 根据账号和密码查询用户
+     * @param account
+     * @param password
+     */
+    public User queryUser(String account, String password) {
+        //手机号正则：
+        String phoneReg = "[1][3,4,5,7,8][0-9]{9}$";
+        //邮箱正则
+        String emailReg = "^\\s*\\w+(?:\\.{0,1}[\\w-]+)*@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\\.[a-zA-Z]+\\s*$";
+        User user=new User();
+        if (Pattern.matches(phoneReg,account)){
+            user.setPhone(account);
+        }else if (Pattern.matches(emailReg,account)){
+            user.setEmail(account);
+        }else {
+            user.setUsername(account);
+        }
+        User one = userMapper.selectOne(user); //通过用户名/手机号/邮箱查询出来的user对象
+
+        if (one==null||!PasswordUtil.match(password, one.getPassword())) {
+            throw new HyException(ExceptionEnums.USERNAME_OR_PASSWORD_ERROR);
+        }
+        return one;
+    }
+
+
+    /**
+     * 判断用户名是否重复
+     * @param username
+     */
+    public Boolean checkUsername(String username) {
+        User user=new User();
+        user.setUsername(username);
+        User one = userMapper.selectOne(user);
+        if (one==null){
+            return true;
+        }
+        return false;
     }
 }

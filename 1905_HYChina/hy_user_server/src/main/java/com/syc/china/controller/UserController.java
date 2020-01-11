@@ -1,21 +1,12 @@
 package com.syc.china.controller;
 
-import com.syc.china.dto.UserDto;
 import com.syc.china.pojo.User;
 import com.syc.china.pojo.UserDetail;
-import com.syc.china.pojo.UserTest;
 import com.syc.china.service.UserService;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authz.AuthorizationException;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.authz.annotation.RequiresRoles;
-import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 /**
  * @author 汪梦瑶
@@ -27,30 +18,73 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    /*
-        发送手机验证码
+
+    /**
+     * 发送手机验证码
+     * @param mobile
+     * @return
      */
-    @GetMapping("/getMobileCode")
+    @PostMapping("/getMobileCode")
     public ResponseEntity<Void> sendMobileCode(String mobile){
-        System.out.println(mobile);
         userService.sendMobileCode(mobile);
         return ResponseEntity.ok(null);
     }
 
 
-    /*
-        注册
+
+    /***
+     * 注册
+     * @param user user对象
+     * @param roleId  该user对应的角色id
+     * @param confirmPwd  确认密码
+     * @param code  手机验证码
+     * @return
      */
     @PostMapping("/register")
-    public ResponseEntity<Void> register(@RequestBody User user,@RequestParam("code")String code){
-        System.out.println(user);
-        userService.register(user,code);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<Boolean> register(User user,@RequestParam("role_id")Long roleId,@RequestParam("confirm_pwd")String confirmPwd,@RequestParam("code")String code){
+        boolean result = userService.register(user, roleId, confirmPwd, code);
+        return ResponseEntity.ok(result);
     }
 
 
-    /*
-        填写详细信息
+    /**
+     * 判断用户名是否重复
+     * @param username
+     * @return
+     */
+    @PostMapping("/checkUsername")
+    public ResponseEntity<Boolean> checkUsername(@RequestParam String username){
+        System.out.println(username);
+        Boolean result = userService.checkUsername(username);
+        if (result){
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.status(400).body(false);
+
+    }
+
+
+
+    /**
+     *根据账号和密码查询用户
+     * @param account 账号 可以是手机号/邮箱/用户名
+     * @param password
+     * @return
+     */
+    @PostMapping("/login")
+    public ResponseEntity<Boolean> queryUser(@RequestParam("account")String account, @RequestParam("password")String password){
+        User user = userService.queryUser(account, password);
+        if (user!=null){
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.status(400).body(false);
+    }
+
+
+    /**
+     * 填写详细信息
+     * @param userDetail
+     * @return
      */
     @PostMapping("/detail")
     public ResponseEntity<Void> addUserDetail(UserDetail userDetail){
@@ -60,67 +94,6 @@ public class UserController {
     }
 
 
-
-
-    /*
-        登陆
-     */
-    @PostMapping("/login")
-    public ResponseEntity<Void> login(UserDto user){
-
-        //添加用户认证信息
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token=new UsernamePasswordToken(user.getUsername(),user.getPassword());
-        //进行验证
-        try {
-           if (user.isRememberMe()){
-                token.setRememberMe(true);
-            }
-            subject.login(token);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return null;
-
-    }
-
-
-
-   /* *//**
-     * 测试
-     * @param user
-     * @return
-     *//*
-    @RequestMapping("/login")
-    public String login(UserTest user) {
-        //添加用户认证信息
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(
-                user.getUserName(),
-                user.getPassword()
-        );
-        try {
-            //进行验证，这里可以捕获异常，然后返回对应信息
-            subject.login(usernamePasswordToken);
-//            subject.checkRole("admin");
-//            subject.checkPermissions("query", "add");
-        } catch (AuthenticationException e) {
-            e.printStackTrace();
-            return "账号或密码错误！";
-        } catch (AuthorizationException e) {
-            e.printStackTrace();
-            return "没有权限";
-        }
-        return "login success";
-    }
-    //注解验角色和权限
-    @RequiresRoles("admin")
-    @RequiresPermissions("add")
-    @RequestMapping("/index")
-    public String index() {
-        return "index!";
-    }*/
 
 
 }

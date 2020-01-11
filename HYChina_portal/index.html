@@ -1,59 +1,1930 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <title>危运网-专业的危险品物流平台</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="keywords" content="危运网,化工物流,危险品物流,危险品运输,成品油运输,化学危险品运输,化学危险品物流,危化品运输,危险化学品运输" />
+    <meta name="description" content="危运网，危险品运输专业平台，是中国专业、信息更新及时的危险品物流服务平台之一。中国危运网开发出专业的微信端危险品运输配货平台，现已支持所有智能手机，可免费使用。" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/bui/assets/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/layer/layer.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/mall.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/validate.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/util.js"></script>
+    <script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/ss.js"></script>
+    <link href="http://www.weiyun5.com/resources/mall/css/module.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/header.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.weiyun5.com/resources/mall/css/alert.css" rel="stylesheet" type="text/css" />
+
+    <!--banner end -->
 </head>
 <body>
-<h1>index</h1>
 <div class="page">
-    <div class="box"></div>
-    <div class="hint">
-        <div class="hint-in1">
-            <div class="hint1"></div>
-            <div class="hint2">运输价格</div>
-            <div class="hint3"></div>
+    <!--引入头部公共部分-->
+    <script src="js/header.js"></script>
+
+    <!-- 投票 -->
+
+    <!-- 投票 end -->
+    <!--滚动-->
+    <div class="banner">
+        <div class="banner-center" style="position:relative;">
+            <div class="b-img">
+
+                <a href="http://www.weiyun5.com/enterprise/detail?id=29" target="view_window" ><img src="http://www.weiyun5.com/upload/attached/image/20170818/wyw_20170818091802.jpg"></a>
+
+            </div>
         </div>
-        <form id="offer">
-            <input name="memberId" type="hidden" value=""/>
-            <input name="goodId" type="hidden" id="goodId"/>
-            <div class="hint-in2">价格：<input name="offer" type="text" class="tan-input" />/吨</div>
-        </form>
-        <div class="hint-in3">确定</div><div class="tan-del">取消</div>
+        <div class="b-list"></div>
+        <a class="bar-left" href="#"><em></em></a> <a class="bar-right" href="#"><em></em></a>
+        <div class="myLayout">
+            <script>
+                <!--
+                function setTab(name, cursel, n) {
+                    for (i = 1; i <= n; i++) {
+                        var menu = document.getElementById(name + i);
+                        var con = document.getElementById("con_" + name + "_" + i);
+                        //alert(menu);
+                        menu.className = i == cursel ? "hover" : "";
+                        con.style.display = i == cursel ? "inline-block" : "none";
+                    }
+                }
+                //-->
+            </script>
+            <div id="fastPublishContent" style="font-size:12px;font-family:'微软雅黑'">
+                <div class="p-hy_title">
+                    <ul>
+                        <li id="two1" onclick="setTab('two',1,2)" class="hover">快速发布车源</li>
+                        <li id="two2" onclick="setTab('two',2,2)">快速发布货源</li><!--将onclick替换成onmouseover-->
+                    </ul>
+                </div>
+                <div id="con_two_1" class="p-hytab right" style="width: 436px;">
+                    <input id="carStartAreaId" type="hidden" name="fastPublish.startArea">
+                    <input  id="carEndAreaId" type="hidden" name="fastPublish.endArea">
+                    <form id="addCarSource">
+                        <table class="carTab">
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>出发城市&nbsp;&nbsp;</td>
+                                <td colspan="3">
+                                    <input name="depart" type="text" id="city-picker3" class="form-control" style="width: 298px;" readonly type="text" data-toggle="city-picker" placeholder="请输入出发城市" />
+                                    <span id="carStartAreaTips" style="color:red;"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>到达城市&nbsp;&nbsp;</td>
+                                <td colspan="3"><input name="arrvie" type="text" id="city-picker3" class="form-control" style="width: 298px;" readonly type="text" data-toggle="city-picker" placeholder="请输入到达城市" />
+                                    <span id="carEndAreaTips" style="color:red;"></span></td>
+                            </tr>
+                            <tr >
+                                <td style="text-align:right;"><font color="red">*</font>车辆类型&nbsp;&nbsp;</td>
+                                <td colspan="1" style="position: relative;z-index: 1"><select name="type">
+                                    <option value="-1">--请选择--</option>
+
+                                    <option value="1">不锈钢罐车</option>
+
+                                    <option value="2">铝罐车</option>
+
+                                    <option value="3">压力罐车</option>
+
+                                    <option value="4">铁罐车</option>
+
+                                    <option value="5">保温罐车</option>
+
+                                    <option value="6">平板车</option>
+
+                                    <option value="7">高栏车</option>
+
+                                    <option value="8">厢式车</option>
+
+                                </select>
+                                    <span id="carTypeTips" style="color:red;"></span></td>
+                                <td style="text-align:right;"><font color="red">*</font>车源类型&nbsp;&nbsp;</td>
+                                <td colspan="1" style="position: relative;z-index: 1"><select name="sourceType">
+                                    <option value="-1">--请选择--</option>
+
+
+                                    <option value="2">专程车</option>
+
+
+
+                                    <option value="3">回程车</option>
+
+
+                                </select>
+                                    <span id="carTypeTips" style="color:red;"></span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>联系人&nbsp;&nbsp;</td>
+                                <td colspan="1"><input name="people" type="text" placeholder="可选填" style="width: 105px;" /></td>
+                                <td style="text-align:right;"><font color="red">*</font>联系电话&nbsp;&nbsp;</td>
+                                <td colspan="1"><input name="mobile" type="text" placeholder="可选填" style="width: 105px;" /></td>
+                            </tr>
+                            <tr style="height:10px;">
+                                <td></td>
+                                <td colspan="1"><span id="surplustonnageTips" style="color:red;"></span></td>
+                                <td style="text-align:right;"></td>
+                                <td colspan="1"><span id="carLengthTips" style="color:red;"></span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>出发时间&nbsp;&nbsp;</td>
+                                <td colspan="1"><input class="Wdate" name="departTime" type="text" onClick="WdatePicker()" style="width: 105px;" > </td>
+                                <td style="text-align:right;"><font color="red">*</font>备注&nbsp;&nbsp;</td>
+                                <td colspan="1"><input name="content" type="text" placeholder="可选填" style="width: 105px;" /></td>
+                            </tr>
+                            <tr style="height:10px;color:red;">
+                                <td style="text-align:right;"></td>
+                                <td colspan="3" id="carTips"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"></td>
+                                <td colspan="3">
+                                    <a href="javascript:value(0);" onclick="addCarSource();" class="btn" style="background:#E86C36;color:white;width:100px;height:23px; border:none;">快速发布</a>
+                                    <a href="http://www.weiyun5.com/foreground/member/index?type=9" class="btn" style="background:#DDDDDD;width:100px;height:22px; line-height: 22px; margin-left:10px;" target="_blank">详细发布</a></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <input type="hidden" name="fastPublish.flag" value="2" />
+                </div>
+                <div id="con_two_2" class="p-hytab display_no right" style="width: 436px; display: inline-block;">
+                    <input id="demandStartAreaId" type="hidden" name="fastPublish.startArea">
+                    <input  id="demandEndAreaId" type="hidden" name="fastPublish.endArea">
+                    <form id="addGoodSource">
+                        <table class="demandTab" >
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>出发城市&nbsp;&nbsp;</td>
+                                <td colspan="3"><input name="depart" type="text" id="city-picker3" class="form-control" style="width: 304px;"  readonly type="text" data-toggle="city-picker" placeholder="请输入出发城市" />
+                                    <span id="demandStartAreaTips" style="color:red;"></span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>到达城市&nbsp;&nbsp;</td>
+                                <td colspan="3"><input name="arrvie" type="text" id="city-picker3" class="form-control" style="width: 304px;"  readonly type="text" data-toggle="city-picker" placeholder="请输入到达城市" />
+                                    <span id="demandEndAreaTips" style="color:red;"></span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>货物名称&nbsp;&nbsp;</td>
+                                <td style="width: 60px;"><input name="name" type="text" placeholder="请输入货物名称" style="width:100px;" />
+                                    <span id="demandNameTips" style="color:red;"></span></td>
+                                <td style="text-align:right;"><font color="red">*</font>货源类型&nbsp;&nbsp;</td>
+                                <td colspan="1"><select name="goodType">
+                                    <option value="-1">--请选择--</option>
+
+                                    <option value="2">易燃液体</option>
+
+                                    <option value="3">压缩和液化气体</option>
+
+                                    <option value="4">易燃固体</option>
+
+                                    <option value="5">爆炸品</option>
+
+                                    <option value="7">毒害物品</option>
+
+                                    <option value="9">腐蚀品</option>
+
+                                    <option value="10">杂类危险品</option>
+
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>联系人&nbsp;&nbsp;</td>
+                                <td ><input name="people" type="text"placeholder="可选填" /><span class="weight_tips">
+                  <span id="demandLoadingTimeTips" style="color:red;"></span></td>
+                                <td style="text-align:right;"><font color="red">*</font>联系电话&nbsp;&nbsp;</td>
+                                <td class="weight"><input name="mobile" type="text"placeholder="可选填" /><span class="weight_tips"></span></td>
+                            </tr>
+                            <tr style="height:10px;">
+                                <td></td>
+                                <td colspan="1"><span id="demandTypeTips" style="color:red;"></span></td>
+                                <td></td>
+                                <td colspan="1"><span id="demandWeightTips" style="color:red;"></span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"><font color="red">*</font>出发时间&nbsp;&nbsp;</td>
+                                <td ><input class="Wdate" name="departTime" type="text" onClick="WdatePicker()">
+                                    <span id="demandLoadingTimeTips" style="color:red;"></span></td>
+                                <td style="text-align:right;"><font color="red">*</font>备注&nbsp;&nbsp;</td>
+                                <td class="weight"><input name="content" type="text"placeholder="可选填" /><span class="weight_tips"></span></td>
+                            </tr>
+                            <tr style="height:10px;color:red;">
+                                <td style="text-align:right;"></td>
+                                <td colspan="3" id="demandTips"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;"></td>
+                                <td colspan="3">
+                                    <a href="javascript:value(0);" onclick="addGoodSource();" class="btn" style="background:#E86C36;color:white;width:100px;height:23px; border:none;">快速发布</a>
+                                    <a href="http://www.weiyun5.com/foreground/member/index?type=11" target="_blank" style="background:#DDDDDD;width:100px;height:22px; line-height: 22px;margin-left:10px;" class="btn">详细发布</a></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <input type="hidden" name="fastPublish.flag" value="1" />
+                </div>
+            </div>
+        </div>
     </div>
-    <!--头部 start-->
-
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-    <!--三级联动-->
-    <link href="http://www.weiyun5.com/resources/mall/css/city-picker.css" rel="stylesheet">
-    <!--头部 start-->
-    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101358714" charset="utf-8"></script>
-    <header>
-        <div class="top1">
-            <div class="center" style="overflow: initial;">
-                <p class="welcom">欢迎光临危运网！</p>
-                <a href="./login.html"><img src="http://www.weiyun5.com/resources/mall/images/icon-che.png" />发布车源信息</a>
-                <div class="line">|</div>
-                <a href="./login.html"><img src="http://www.weiyun5.com/resources/mall/images/icon-huo.png" />发布货源信息</a>
-                <div class="right"> 欢迎，
-                    <p class="welcom2">
-
-                        客人
+    <!--end 滚动-->
+    <div class="clear"></div>
+    <div class="center">
+        <!--今日焦点-->
+        <div class="focus left">
+            <h1>今日焦点</h1>
+            <p>
 
 
-                    </p>
-                    <div class="line">|</div>
-
-                    <a href="http://www.weiyun5.com/foreground/login">个人中心</a>
+                <!-- 	常让卡车司机头疼的3个故障问题，致病因竟如此简单? -->
 
 
-                    <div class="line">|</div>
+            </p>
+            <div class="rep1 left">
+                <div style="width: 453px; height: 281px; margin: 0 auto;">
+                    <div id="featured">
 
-                    <a href="./login.html">登录</a>
-                    <div class="line">|</div>
-                    <a href="./register.html">注册</a>
+
+                        <a class="orbit-item" href="http://www.weiyun5.com/article/detail?id=1794" data-caption="#htmlCaption1">
+
+                            <img src="http://www.weiyun5.com/upload/attached/image/20180325/wyw_20180325142945.jpg" width="417" height="231" alt="img1"/>
+                        </a>
 
 
+
+                        <a class="orbit-item" href="http://www.weiyun5.com/article/detail?id=1754" data-caption="#htmlCaption2">
+
+                            <img src="http://www.weiyun5.com/upload/attached/image/20180314/wyw_20180314161159.jpg" width="417" height="231" alt="img1"/>
+                        </a>
+
+
+
+                        <a class="orbit-item" href="http://www.weiyun5.com/article/detail?id=1714" data-caption="#htmlCaption3">
+
+                            <img src="http://www.weiyun5.com/upload/attached/image/20180304/wyw_20180304151133.jpg" width="417" height="231" alt="img1"/>
+                        </a>
+
+
+                    </div>
+
+
+                    <span class="orbit-caption" id="htmlCaption1">常让卡车司机头疼的3个故障问题，致病因竟如此简单?</span>
+
+
+
+                    <span class="orbit-caption" id="htmlCaption2">交通部发话：10年车龄内的货车每年检一次，2018年实现“两检合一”</span>
+
+
+
+                    <span class="orbit-caption" id="htmlCaption3">不可不知的危化品运输车安全行车知识</span>
+
+
+                </div>
+            </div>
+        </div>
+        <!--新闻资讯-->
+        <div class="news left">
+            <ul>
+                <li>
+                    <h1>
+
+
+                        <a href="http://www.weiyun5.com/article/detail?id=4424">【限行】货车请绕行！鼎山长江大桥将限行一个月</a>
+
+
+                    </h1>
+                </li>
+
+
+                <li><a href="http://www.weiyun5.com/article/detail?id=4423" class="news-a">关注丨雪天路滑，卡友们切记行车安全最重要！</a></li>
+
+
+
+                <li><a href="http://www.weiyun5.com/article/detail?id=4422" class="news-a">今日油价 ：今天1月8日，全国加油站调整后92、95号汽油限售价</a></li>
+
+
+
+                <li><a href="http://www.weiyun5.com/article/detail?id=4421" class="news-a">扣分新规来了！最高减免6分！你只需这样做...</a></li>
+
+
+
+                <li><a href="http://www.weiyun5.com/article/detail?id=4420" class="news-a">又一省提高限速！湖北：2020年起，超速10%只警告不计分！</a></li>
+
+
+
+                <li><a href="http://www.weiyun5.com/article/detail?id=4419" class="news-a">快收藏！2020年起，全国各省份高速危险品运输限行通知！</a></li>
+
+
+
+                <li><a href="http://www.weiyun5.com/article/detail?id=4418" class="news-a">邪门？行驶同段高速收费却大相径庭，记者暗访收费站结果令人心惊</a></li>
+
+
+
+                <li><a href="http://www.weiyun5.com/article/detail?id=4417" class="news-a">人民日报三问高速公路收费新情况：用了ETC为何更堵更贵？</a></li>
+
+
+            </ul>
+        </div>
+        <!--危运论坛-->
+        <div class="bbs right">
+            <div class="bbs-tle">
+                <h1>危运论坛</h1>
+                <span class="right"><a href="http://www.weiyun5.com/BBS/index">更多>></a></span></div>
+            <table border="0" width="307">
+                <tr>
+
+
+                    <td><a href="http://www.weiyun5.com/BBS/detail?id=728"><img src="http://www.weiyun5.com/upload/attached/image/20171114/wyw_20171114162024.jpg" width="150" height="90" /></a></td>
+
+
+
+                    <td><a href="http://www.weiyun5.com/BBS/detail?id=727"><img src="http://www.weiyun5.com/upload/attached/image/20171114/wyw_20171114161948.jpg" width="150" height="90" /></a></td>
+
+
+                </tr>
+                <tr>
+
+
+                    <td><p>东风商用车厂家直销，厂家直销！！</p></td>
+
+
+
+                    <td><p>省钱利器 陕汽新M3000 336天然气牵引车</p></td>
+
+
+                </tr>
+            </table>
+            <ul>
+
+
+                <li>
+                    <h2><a href="http://www.weiyun5.com/BBS/detail?id=722">乘龙H7/500的潍才，牵引车，这车质量怎么样</a></h2>
+                    <span class="right"><a href="http://www.weiyun5.com/BBS/detail?id=722">车辆市场</a></span></li>
+
+
+
+                <li>
+                    <h2><a href="http://www.weiyun5.com/BBS/detail?id=721">豪曼牵引车</a></h2>
+                    <span class="right"><a href="http://www.weiyun5.com/BBS/detail?id=721">车辆市场</a></span></li>
+
+
+
+                <li>
+                    <h2><a href="http://www.weiyun5.com/BBS/detail?id=717">520旗舰手动带缓速器的牵引头多少钱</a></h2>
+                    <span class="right"><a href="http://www.weiyun5.com/BBS/detail?id=717">物流沙龙</a></span></li>
+
+
+
+                <li>
+                    <h2><a href="http://www.weiyun5.com/BBS/detail?id=716">J6-350马力多少公里换机油</a></h2>
+                    <span class="right"><a href="http://www.weiyun5.com/BBS/detail?id=716">物流沙龙</a></span></li>
+
+
+            </ul>
+        </div>
+        <!--广告条-->
+        <div class="repoter-img">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <div class="clear"></div>
+        <div class="center">
+            <div class="hot">
+                <div class="hot-tle">
+                    <h1>油价速报</h1>
+                </div>
+                <div style="width:1200px; margin:20px auto;">
+                    <div class="mr_frbox">
+                        <img class="mr_frBtnL prev" src="http://www.weiyun5.com/resources/mall/images/hot-left.png" width="23" height="40" />
+                        <div class="mr_frUl">
+                            <div class="tempWrap" style="overflow:hidden; position:relative; ">
+                                <ul style="width: 6960px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -2320px;">
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/92qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国五92#汽油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6950 元/吨</span></h2>
+                                            <h2>产地：东营华星石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/92qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国六92#汽油（高效）</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6800 元/吨</span></h2>
+                                            <h2>产地：东营华星石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/92qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国五92#汽油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6800 元/吨</span></h2>
+                                            <h2>产地：东营正和石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/95qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国五95#汽油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6950 元/吨</span></h2>
+                                            <h2>产地：东营正和石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/10chaiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">-10#普柴</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">5450 元/吨</span></h2>
+                                            <h2>产地：山东齐成石油化工</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/10chaiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">-10#国Ⅴ</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">5480 元/吨</span></h2>
+                                            <h2>产地：山东齐成石油化工</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/10chaiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">-10#国Ⅴ柴油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">5450 元/吨</span></h2>
+                                            <h2>产地：山东亨润德</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/10chaiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">-10#国六柴油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">5480 元/吨</span></h2>
+                                            <h2>产地：山东亨润德</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/10chaiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国六车柴</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6090 元/吨</span></h2>
+                                            <h2>产地：东营尚能石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/10chaiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">京六车柴</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6190 元/吨</span></h2>
+                                            <h2>产地：东营尚能石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/92qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国五车用92#汽油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6550 元/吨</span></h2>
+                                            <h2>产地：东营垦利石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/92qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">92#国Ⅵ</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6810 元/吨</span></h2>
+                                            <h2>产地：山东齐成石油化工</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/95qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">95#国Ⅵ</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6960 元/吨</span></h2>
+                                            <h2>产地：山东齐成石油化工</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/92qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国六92#汽油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6713 元/吨</span></h2>
+                                            <h2>产地：滨州京博石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                    <li style="float: left; width: 240px;">
+                                        <div class="hou-k" style="width:240px;">
+                                            <img src="http://www.weiyun5.com/resources/mall/image/95qiyou.jpg" width="238" height="160" />
+                                            <h1>货品：<span style="color:#0a529c;font-weight:600;">国六95#汽油</span></h1>
+                                            <h2>单价：<span style="color:#bd2022;font-weight:600;">6874 元/吨</span></h2>
+                                            <h2>产地：滨州京博石化</h2>
+                                            <h2>时间：2020-01-09</h2>
+                                        </div></li>
+                                    <li style="float: left; width: 240px;"> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <img class="mr_frBtnR next" src="http://www.weiyun5.com/resources/mall/images/hot-right.png" width="23" height="40" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+
+
+        <!--货源信息-->
+        <div class="huo-mess">
+            <div class="huo-tle">
+                <h1>货源信息</h1>
+                <span class="right"><a href="http://www.weiyun5.com/goodSource/index">更多>></a></span></div>
+            <div class="supply"> <a href="javascripet:value(0);" class="hot-btn">热门货源地</a>
+                <table border="0">
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodDepart=山东省/东营市/">山东省东营市</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodDepart=江苏省/苏州市/">江苏省苏州市</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodDepart=山东省/淄博市/">山东省淄博市</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodDepart=河南省/濮阳市/">河南省濮阳市</a></td>
+                    </tr>
+
+                </table>
+                <a href="javascripet:value(0);" class="hot-btn">货源种类</a>
+                <table border="0">
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodType=2">易燃液体</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodType=3">压缩和液化气体</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodType=4">易燃固体</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodType=5">爆炸品</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodType=7">毒害物品</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodType=9">腐蚀品</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/goodSource/index?goodType=10">杂类危险品</a></td>
+
+                    </tr>
+
+                </table>
+            </div>
+            <div class="huo-list right">
+                <table border="0" width="695">
+                    <tr class="huo-tr">
+                        <td>出发地</td>
+                        <td><img src="http://www.weiyun5.com/resources/mall/images/jian-1.png" /></td>
+                        <td>到达地</td>
+                        <td>货物名称</td>
+                        <td>时间</td>
+                        <td>会员类型</td>
+                        <td>查看</td>
+                        <td>车主报价</td>
+                    </tr>
+
+                    <tr>
+                        <td>辽宁省鞍山市</td>
+                        <td><div class="jian2">40吨</div></td>
+                        <td>辽宁省大连市</td>
+                        <td>石油</td>
+                        <td>01-30</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3468" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3468')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>河南省新乡市</td>
+                        <td><div class="jian2">16吨</div></td>
+                        <td>山东省临沂市</td>
+                        <td>乙醇</td>
+                        <td>01-09</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3467" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3467')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>安徽省合肥市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>上海市市辖区</td>
+                        <td>油漆</td>
+                        <td>01-07</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3466" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3466')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>上海市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>辽宁省大连市</td>
+                        <td>二乙异丙醇胺</td>
+                        <td>01-07</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3465" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3465')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>河北省沧州市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>河北省邯郸市</td>
+                        <td>混合苯</td>
+                        <td>01-05</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3464" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3464')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>江西省宜春市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>江西省吉安市</td>
+                        <td>甲醇</td>
+                        <td>01-06</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3463" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3463')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>内蒙古自治区鄂尔多斯市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>山东省东营市</td>
+                        <td>甲醇</td>
+                        <td>01-03</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3462" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3462')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>山东省济南市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>山东省济宁市</td>
+                        <td>乙醇</td>
+                        <td>01-10</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3461" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3461')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>河南省开封市</td>
+                        <td><div class="jian2">30吨</div></td>
+                        <td>江苏省淮安市</td>
+                        <td>液体甲醇钠</td>
+                        <td>01-03</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3460" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3460')" class="offer">车主报价</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>山东省济南市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>山东省淄博市</td>
+                        <td>危品</td>
+                        <td>01-01</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/goodSource/detail?id=3459" class="look">查看</a></td>
+                        <td><a href="javascript:value(0);" onclick="btn1('3459')" class="offer">车主报价</a></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <!--推荐货源企业-->
+        <div class="company right">
+            <div class="com-tle">
+                <h1>推荐货源企业</h1>
+                <span class="right"><a href="http://www.weiyun5.com/enterprise/index">更多>></a></span></div>
+            <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <li>
+                    <a href="#" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20171024/wyw_20171024092658.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="#" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20171024/wyw_20171024092640.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="#" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20171024/wyw_20171024092610.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="http://www.weiyun5.com/enterprise/detail?id=32" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20170621/wyw_20170621103542.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+        </div>
+        <!--广告条-->
+        <div class="repoter-img">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <!--车源信息-->
+        <div class="huo-mess">
+            <div class="huo-tle">
+                <h1>车源信息</h1>
+                <span class="right"><a href="http://www.weiyun5.com/carSource/index">更多>></a></span></div>
+            <div class="supply"> <a href="javascripet:value(0);" class="hot-btn">热门车源地</a>
+                <table border="0">
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/carSource/index?carDepart=山东省/东营市/">山东省东营市</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/carSource/index?carDepart=山东省/潍坊市/">山东省潍坊市</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/carSource/index?carDepart=山东省/淄博市/">山东省淄博市</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="http://www.weiyun5.com/carSource/index?carDepart=江苏省/徐州市/">江苏省徐州市</a></td>
+                    </tr>
+
+                </table>
+                <a href="javascripet:value(0);" class="hot-btn">车源种类</a>
+                <table border="0">
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/carSource/index?carType=2">专程车</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="http://www.weiyun5.com/carSource/index?carType=3">回程车</a></td>
+
+                    </tr>
+
+                </table>
+            </div>
+            <div class="huo-list right">
+                <table border="0" width="695">
+                    <tr class="huo-tr">
+                        <td>出发地</td>
+                        <td><img src="http://www.weiyun5.com/resources/mall/images/jian-1.png" /></td>
+                        <td>到达地</td>
+                        <td>车辆类型</td>
+                        <td>运输类型</td>
+                        <td>时间</td>
+                        <td>会员类型</td>
+                        <td>查看</td>
+                    </tr>
+
+                    <tr>
+                        <td>安徽省合肥市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>上海市市辖区</td>
+                        <td>厢式车</td>
+                        <td>回程车</td>
+                        <td>01-07</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2691" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>广东省广州市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>山东省</td>
+                        <td>铝罐车</td>
+                        <td>专程车</td>
+                        <td>01-08</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2690" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>广东省广州市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>辽宁省沈阳市</td>
+                        <td>不锈钢罐车</td>
+                        <td>专程车</td>
+                        <td>01-08</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2689" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>河北省沧州市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>河北省邯郸市</td>
+                        <td>保温罐车</td>
+                        <td>专程车</td>
+                        <td>01-05</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2688" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>天津市市辖区</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>辽宁省大连市</td>
+                        <td>高栏车</td>
+                        <td>专程车</td>
+                        <td>12-27</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2687" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>湖北省孝感市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>江苏省泰州市</td>
+                        <td>高栏车</td>
+                        <td>回程车</td>
+                        <td>12-25</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2686" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>山东省德州市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>河南省安阳市</td>
+                        <td>平板车</td>
+                        <td>回程车</td>
+                        <td>12-21</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2685" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>湖北省宜昌市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>山东省济南市</td>
+                        <td>平板车</td>
+                        <td>回程车</td>
+                        <td>12-21</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2684" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>宁夏回族自治区银川市</td>
+                        <td><div class="jian2">吨</div></td>
+                        <td>湖北省省直辖行政单位</td>
+                        <td>铝罐车</td>
+                        <td>专程车</td>
+                        <td>12-19</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2683" class="look">查看</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>广东省韶关市</td>
+                        <td><div class="jian2">30吨</div></td>
+                        <td>内蒙古自治区</td>
+                        <td>不锈钢罐车</td>
+                        <td>回程车</td>
+                        <td>12-18</td>
+                        <td>普通会员</td>
+                        <td><a href="http://www.weiyun5.com/carSource/detail?id=2682" class="look">查看</a></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <!--推荐车源企业-->
+        <div class="company right">
+            <div class="com-tle">
+                <h1>推荐车源企业</h1>
+                <span class="right"><a href="http://www.weiyun5.com/enterprise/index">更多>></a></span></div>
+            <ul>
+
+
+
+
+
+
+
+
+
+
+
+                <li>
+                    <a href="#" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20171024/wyw_20171024092739.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="#" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20171024/wyw_20171024092726.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="#" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20171024/wyw_20171024092712.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+                <li>
+                    <a href="http://www.weiyun5.com/enterprise/detail?id=35" target="view_window" >
+                        <img src="http://www.weiyun5.com/upload/attached/image/20170621/wyw_20170621104014.jpg" width="307" height="115" /></a>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="center">
+        <div class="list-ul">
+            <!--政策法规-->
+            <div class="law">
+                <div class="law-tle">
+                    <h1>政策法规</h1>
+                    <span class="right"><a href="http://www.weiyun5.com/article/index?program=6">更多>></a></span></div>
+                <ul>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=2830">紧急！新交规扣分项新增11条，每条都扣12分！相互转告！</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=2830">12-04</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=2645">最高法院对油耗子下狠手：偷油负刑事责任，最低判3年！</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=2645">10-26</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=2641">交通部：车牌号实现终生制！交强险不再强制交950元！</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=2641">10-25</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=1848">公安部：交通事故处理，严禁交管部门指定停车场，扣留车辆费用由交管部门承担！（2018年5月1日起施行）</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=1848">04-09</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=1622">十部门开展炼油领域严重违法违规专项治理</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=1622">01-29</a></span></li>
+
+                </ul>
+            </div>
+            <div class="law right">
+                <div class="law-tle">
+                    <h1>行业新闻</h1>
+                    <span class="right"><a href="http://www.weiyun5.com/article/index?program=7">更多>></a></span></div>
+                <ul>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4424">【限行】货车请绕行！鼎山长江大桥将限行一个月</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4424">01-08</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4423">关注丨雪天路滑，卡友们切记行车安全最重要！</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4423">01-08</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4421">扣分新规来了！最高减免6分！你只需这样做...</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4421">01-08</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4420">又一省提高限速！湖北：2020年起，超速10%只警告不计分！</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4420">01-08</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4419">快收藏！2020年起，全国各省份高速危险品运输限行通知！</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4419">01-07</a></span></li>
+
+                </ul>
+            </div>
+            <div class="law">
+                <div class="law-tle">
+                    <h1>化工行情</h1>
+                    <span class="right"><a href="http://www.weiyun5.com/article/index?program=8">更多>></a></span></div>
+                <ul>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4422">今日油价 ：今天1月8日，全国加油站调整后92、95号汽油限售价</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4422">01-08</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4416">油价从去年涨到今年，下周二(1月14日)恐怕继续涨</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4416">01-07</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4415">2020年1月7日汽柴油价格</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4415">01-07</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4411">油价最新消息：每日油价更新</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4411">01-06</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/article/detail?id=4410">2020年1月6日汽柴油价格</a>
+                        <span class="right"><a href="http://www.weiyun5.com/article/detail?id=4410">01-06</a></span></li>
+
+                </ul>
+            </div>
+            <div class="law right">
+                <div class="law-tle">
+                    <h1>危运百科</h1>
+                    <span class="right"><a href="http://www.weiyun5.com/encyclopedia/index">更多>></a></span></div>
+                <ul>
+
+                    <li><a href="http://www.weiyun5.com/encyclopedia/detail?id=29">危运网油品百科（7）——MTBE</a>
+                        <span class="right"><a href="http://www.weiyun5.com/encyclopedia/detail?id=29">02-26</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/encyclopedia/detail?id=28">危运网油品百科（6）——二甲苯</a>
+                        <span class="right"><a href="http://www.weiyun5.com/encyclopedia/detail?id=28">02-26</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/encyclopedia/detail?id=27">危运网油品百科（5）——催柴</a>
+                        <span class="right"><a href="http://www.weiyun5.com/encyclopedia/detail?id=27">02-12</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/encyclopedia/detail?id=26">危运网油品百科（4）——石脑油</a>
+                        <span class="right"><a href="http://www.weiyun5.com/encyclopedia/detail?id=26">02-12</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/encyclopedia/detail?id=25">十七种危化品运输安全技术操作规程</a>
+                        <span class="right"><a href="http://www.weiyun5.com/encyclopedia/detail?id=25">07-23</a></span></li>
+
+                </ul>
+            </div>
+            <div class="law">
+                <div class="law-tle">
+                    <h1>招聘信息</h1>
+                    <span class="right"><a href="http://www.weiyun5.com/recruit/index">更多>></a></span></div>
+                <ul>
+
+                    <li><a href="http://www.weiyun5.com/recruit/detail?id=98">京博物流诚招危化品车辆驾驶员</a>
+                        <span class="right"><a href="http://www.weiyun5.com/recruit/detail?id=98">11-29</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/recruit/detail?id=97">我公司急招危险品罐车押运员</a>
+                        <span class="right"><a href="http://www.weiyun5.com/recruit/detail?id=97">11-05</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/recruit/detail?id=96">我公司急招A2证危险品罐车驾驶员</a>
+                        <span class="right"><a href="http://www.weiyun5.com/recruit/detail?id=96">11-05</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/recruit/detail?id=95">押运员</a>
+                        <span class="right"><a href="http://www.weiyun5.com/recruit/detail?id=95">10-31</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/recruit/detail?id=94">驾驶员20名</a>
+                        <span class="right"><a href="http://www.weiyun5.com/recruit/detail?id=94">10-31</a></span></li>
+
+                </ul>
+            </div>
+            <div class="law right">
+                <div class="law-tle">
+                    <h1>求职信息</h1>
+                    <span class="right"><a href="http://www.weiyun5.com/resume/index">更多>></a></span></div>
+                <ul>
+
+                    <li><a href="http://www.weiyun5.com/resume/detail?id=33">押运员工作</a>
+                        <span class="right"><a href="http://www.weiyun5.com/resume/detail?id=33">05-04</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/resume/detail?id=32">求职</a>
+                        <span class="right"><a href="http://www.weiyun5.com/resume/detail?id=32">03-19</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/resume/detail?id=31">求职</a>
+                        <span class="right"><a href="http://www.weiyun5.com/resume/detail?id=31">03-19</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/resume/detail?id=26">找一份押运员的工作</a>
+                        <span class="right"><a href="http://www.weiyun5.com/resume/detail?id=26">03-01</a></span></li>
+
+                    <li><a href="http://www.weiyun5.com/resume/detail?id=27">找一份押运员的工作</a>
+                        <span class="right"><a href="http://www.weiyun5.com/resume/detail?id=27">03-01</a></span></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="rep-sml right">
+            <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="center">
+        <script>
+            function srcMarquee(){
+                this.ID = document.getElementById(arguments[0]);
+                if(!this.ID){this.ID = -1;return;}
+                this.Direction = this.Width = this.Height = this.DelayTime = this.WaitTime = this.Correct = this.CTL = this.StartID = this.Stop = this.MouseOver = 0;
+                this.Step = 1;
+                this.Timer = 30;
+                this.DirectionArray = {"top":0 , "bottom":1 , "left":2 , "right":3};
+                if(typeof arguments[1] == "number")this.Direction = arguments[1];
+                if(typeof arguments[2] == "number")this.Step = arguments[2];
+                if(typeof arguments[3] == "number")this.Width = arguments[3];
+                if(typeof arguments[4] == "number")this.Height = arguments[4];
+                if(typeof arguments[5] == "number")this.Timer = arguments[5];
+                if(typeof arguments[6] == "number")this.DelayTime = arguments[6];
+                if(typeof arguments[7] == "number")this.WaitTime = arguments[7];
+                if(typeof arguments[8] == "number")this.ScrollStep = arguments[8]
+                this.ID.style.overflow = this.ID.style.overflowX = this.ID.style.overflowY = "hidden";
+                this.ID.noWrap = true;
+                this.IsNotOpera = (navigator.userAgent.toLowerCase().indexOf("opera") == -1);
+                if(arguments.length >= 7)this.Start();
+            }
+            srcMarquee.prototype.Start = function(){
+                if(this.ID == -1)return;
+                if(this.WaitTime < 800)this.WaitTime = 800;
+                if(this.Timer < 20)this.Timer = 20;
+                if(this.Width == 0)this.Width = parseInt(this.ID.style.width);
+                if(this.Height == 0)this.Height = parseInt(this.ID.style.height);
+                if(typeof this.Direction == "string")this.Direction = this.DirectionArray[this.Direction.toString().toLowerCase()];
+                this.HalfWidth = Math.round(this.Width / 2);
+                this.BakStep = this.Step;
+                this.ID.style.width = this.Width;
+                this.ID.style.height = this.Height;
+                if(typeof this.ScrollStep != "number")this.ScrollStep = this.Direction > 1 ? this.Width : this.Height;
+                var msobj = this;
+                var timer = this.Timer;
+                var delaytime = this.DelayTime;
+                var waittime = this.WaitTime;
+                msobj.StartID = function(){msobj.Scroll();}
+                msobj.Continue = function(){
+                    if(msobj.MouseOver == 1){
+                        setTimeout(msobj.Continue,delaytime);
+                    }
+                    else{ clearInterval(msobj.TimerID);
+                        msobj.CTL = msobj.Stop = 0;
+                        msobj.TimerID = setInterval(msobj.StartID,timer);
+                    }
+                }
+                msobj.Pause = function(){
+                    msobj.Stop = 1;
+                    clearInterval(msobj.TimerID);
+                    setTimeout(msobj.Continue,delaytime);
+                }
+                msobj.Begin = function(){
+                    msobj.ClientScroll = msobj.Direction > 1 ? msobj.ID.scrollWidth : msobj.ID.scrollHeight;
+                    if((msobj.Direction <= 1 && msobj.ClientScroll <msobj.Height) || (msobj.Direction > 1 && msobj.ClientScroll <msobj.Width))return;
+                    msobj.ID.innerHTML += msobj.ID.innerHTML;
+                    msobj.TimerID = setInterval(msobj.StartID,timer);
+                    if(msobj.ScrollStep < 0)return;
+                    msobj.ID.onmousemove = function(event){
+                        if(msobj.ScrollStep == 0 && msobj.Direction > 1){
+                            var event = event || window.event;
+                            if(window.event){
+                                if(msobj.IsNotOpera){msobj.EventLeft = event.srcElement.id == msobj.ID.id ? event.offsetX - msobj.ID.scrollLeft : event.srcElement.offsetLeft - msobj.ID.scrollLeft + event.offsetX;}
+                                else{msobj.ScrollStep = null;return;}
+                            }
+                            else{msobj.EventLeft = event.layerX - msobj.ID.scrollLeft;}
+                            msobj.Direction = msobj.EventLeft > msobj.HalfWidth ? 3 : 2;
+                            msobj.AbsCenter = Math.abs(msobj.HalfWidth - msobj.EventLeft);
+                            msobj.Step = Math.round(msobj.AbsCenter * (msobj.BakStep*2) / msobj.HalfWidth);
+                        }
+                    }
+                    msobj.ID.onmouseover = function(){
+                        if(msobj.ScrollStep == 0)return;
+                        msobj.MouseOver = 1;
+                        clearInterval(msobj.TimerID);
+                    }
+                    msobj.ID.onmouseout = function(){
+                        if(msobj.ScrollStep == 0){
+                            if(msobj.Step == 0)msobj.Step = 1;
+                            return;
+                        }
+                        msobj.MouseOver = 0;
+                        if(msobj.Stop == 0){
+                            clearInterval(msobj.TimerID);
+                            msobj.TimerID = setInterval(msobj.StartID,timer);
+                        }
+                    }
+                }
+                setTimeout(msobj.Begin,waittime);
+            }
+            srcMarquee.prototype.Scroll = function(){
+                switch(this.Direction){
+                    case 0:
+                        this.CTL += this.Step;
+                        if(this.CTL >= this.ScrollStep && this.DelayTime > 0){
+                            this.ID.scrollTop += this.ScrollStep + this.Step - this.CTL;
+                            this.Pause();
+                            return;
+                        }
+                        else{
+                            if(this.ID.scrollTop >= this.ClientScroll){this.ID.scrollTop -= this.ClientScroll;}
+                            this.ID.scrollTop += this.Step;
+                        }
+                        break;
+                    case 1:
+                        this.CTL += this.Step;
+                        if(this.CTL >= this.ScrollStep && this.DelayTime > 0){
+                            this.ID.scrollTop -= this.ScrollStep + this.Step - this.CTL;
+                            this.Pause();
+                            return;
+                        }
+                        else{
+                            if(this.ID.scrollTop <= 0){this.ID.scrollTop += this.ClientScroll;}
+                            this.ID.scrollTop -= this.Step;
+                        }
+                        break;
+                    case 2:
+                        this.CTL += this.Step;
+                        if(this.CTL >= this.ScrollStep && this.DelayTime > 0){
+                            this.ID.scrollLeft += this.ScrollStep + this.Step - this.CTL;
+                            this.Pause();
+                            return;
+                        }
+                        else{
+                            if(this.ID.scrollLeft >= this.ClientScroll){this.ID.scrollLeft -= this.ClientScroll;}
+                            this.ID.scrollLeft += this.Step;
+                        }
+                        break;
+                    case 3:
+                        this.CTL += this.Step;
+                        if(this.CTL >= this.ScrollStep && this.DelayTime > 0){
+                            this.ID.scrollLeft -= this.ScrollStep + this.Step - this.CTL;
+                            this.Pause();
+                            return;
+                        }
+                        else{
+                            if(this.ID.scrollLeft <= 0){this.ID.scrollLeft += this.ClientScroll;}
+                            this.ID.scrollLeft -= this.Step;
+                        }
+                        break;
+                }
+            }
+        </script>
+
+        <div id="Scroll">
+            <div id="ScrollMe" style="overflow: hidden; height: 27px;">
+
+                <a href="http://www.hgwaterchem.com/" target="_blank">江苏源泉红光环保科技有限公司</a>
+
+                <a href="www.willingchem.com" target="_blank">蔚林新材料科技股份有限公司</a>
+
+                <a href="www.aoyuesy.com" target="_blank">大连澳粤供应链管理有限公司</a>
+
+                <a href="www.china jinyan.com" target="_blank">淮安金焱电子有限公司</a>
+
+                <a href="421747557@qq.com" target="_blank">菏泽紫东达物流运输有限公司    危化品运输</a>
+
+                <a href="www.gzrxwl.com" target="_blank">广州荣祥运输服务有限公司</a>
+
+                <a href="" target="_blank">青岛颖锐化工有限公司</a>
+
+                <a href="WWW.SDZFSM.COM" target="_blank">山东德州德城区喆丰商贸有限公司</a>
+
+                <a href="" target="_blank">寻找河南巩义市到河南固始县油罐车</a>
+
+                <a href="www" target="_blank">万通运输公司</a>
+
+                <a href="www" target="_blank">富强运输</a>
+
+                <a href="www" target="_blank">德州配货中介</a>
+
+                <a href="www" target="_blank">金友危险品运输有限公司</a>
+
+                <a href="www" target="_blank">济宁汇世达物流公司</a>
+
+                <a href="www" target="_blank">柴油</a>
+
+                <a href="www" target="_blank">天下为家</a>
+
+                <a href="www" target="_blank">常年在全国范围有货发回邯郸</a>
+
+                <a href="www" target="_blank">寻找车辆运输</a>
+
+                <a href="www.zjjywl.com" target="_blank">自己金宇物流股份有限公司</a>
+
+                <a href="www.weiyun5.com" target="_blank">顺兴</a>
+
+                <a href="http://www.weiyun5.com/foreground/member/index?type=10" target="_blank">河北方成运输公司.本公司专业运输3类.9类.危险废物.医疗废物</a>
+
+                <a href="www.weiyun5.com" target="_blank">鑫远危运</a>
+
+                <a href="www.weiyun5.com" target="_blank">个人车主</a>
+
+                <a href="http://gsxt.lngs.gov.cn" target="_blank">盘锦振兴物流运输公司</a>
+
+                <a href="www.weiyun5.com" target="_blank">大海</a>
+
+                <a href="www.weiyun5.com" target="_blank">诚信危货运输车队</a>
+
+                <a href="www.weiyun5.com" target="_blank">自己有两台新式铝合金油罐车</a>
+
+                <a href="www.weiyun5.com" target="_blank">个人车主</a>
+
+                <a href="www.weiyun5.com" target="_blank">个人车主</a>
+
+                <a href="www.weiyun5.com" target="_blank">绍兴上虞远程物流有限公司</a>
+
+                <a href="changyihaoyang.com" target="_blank">昌邑市昊洋物流有限公司</a>
+
+                <a href="www.weiyun5.com" target="_blank">聊城汇达物流运输有限公司</a>
+
+                <a href="http://www.weihuo56.com/" target="_blank">东营万合物流信息有限公司</a>
+
+                <a href="www" target="_blank">利津危险品运输公司</a>
+
+                <a href="www" target="_blank">3类铝合金罐车运输</a>
+
+                <a href="www" target="_blank">汇昌金凯</a>
+
+                <a href="http://www.zhengming56.com/" target="_blank">河北郑明物流有限公司</a>
+
+                <a href="http://test.weiyun5.com/enterprise/detail?id=28" target="_blank">个人</a>
+
+                <a href="http://test.weiyun5.com/enterprise/detail?id=27" target="_blank">东营物流公司</a>
+
+                <a href="www" target="_blank">东营畅游物流</a>
+
+            </div>
+        </div>
+        <!--参数对应依次是：Direction（默认0，向上，1向下）| Step | Width | Height | Timer | DelayTime | WaitTime | ScrollStep-->
+        <script>new srcMarquee("ScrollMe",0,1,1098,27,3,3000,1000,27)</script>
+    </div>
 </div>
-            </div></div></header></div></body>
+
+<div class="center">
+    <div class="hot">
+        <div class="hot-tle">
+            <h1>展会信息</h1>
+            <span class="right"><a href="http://www.weiyun5.com/exhibition/index?program=0">更多>></a></span></div>
+        <ul class="p-ex-index">
+
+            <li>
+                <div class="hou-k"><a href="http://www.weiyun5.com/exhibition/detail?id=25">
+
+                    <img src="http://www.weiyun5.com/upload/attached/image/20190918/wyw_20190918175044.jpg" width="240" height="160" />
+                </a>
+                    <h2><a href="http://www.weiyun5.com/exhibition/detail?id=25">2020第二十届中国国际石油石化技术装备展览会</a></h2>
+                    <time>发布时间：09-18</time>
+                </div>
+            </li>
+
+            <li>
+                <div class="hou-k"><a href="http://www.weiyun5.com/exhibition/detail?id=24">
+
+                    <img src="http://www.weiyun5.com/upload/attached/image/20190524/wyw_20190524145706.jpg" width="240" height="160" />
+                </a>
+                    <h2><a href="http://www.weiyun5.com/exhibition/detail?id=24">第十一届上海国际石油化工安全防护及消防应急管理展览会</a></h2>
+                    <time>发布时间：05-13</time>
+                </div>
+            </li>
+
+            <li>
+                <div class="hou-k"><a href="http://www.weiyun5.com/exhibition/detail?id=23">
+
+                    <img src="http://www.weiyun5.com/upload/attached/image/20190511/wyw_20190511175650.gif" width="240" height="160" />
+                </a>
+                    <h2><a href="http://www.weiyun5.com/exhibition/detail?id=23">2019第11届上海石油化工展览会</a></h2>
+                    <time>发布时间：05-11</time>
+                </div>
+            </li>
+
+            <li>
+                <div class="hou-k"><a href="http://www.weiyun5.com/exhibition/detail?id=22">
+
+                    <img src="http://www.weiyun5.com/upload/attached/image/20190511/wyw_20190511175259.jpg" width="240" height="160" />
+                </a>
+                    <h2><a href="http://www.weiyun5.com/exhibition/detail?id=22">2019中国国际（武汉）物流产业博览会</a></h2>
+                    <time>发布时间：05-11</time>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class="center">
+    <div class="hot">
+        <div class="hot-tle">
+            <h1>热门视频</h1>
+            <span class="right"><a href="http://www.weiyun5.com/article/index?program=9">更多>></a></span></div>
+        <div style="width:1200px; margin:20px auto;">
+            <div class="mr_frbox"> <img class="mr_frBtnL prev" src="http://www.weiyun5.com/resources/mall/images/hot-left.png" width="23" height="40"/>
+                <div class="mr_frUl">
+                    <ul>
+
+                        <li><div class="hou-k"><a href="http://www.weiyun5.com/article/detail?id=4418"><img src="http://www.weiyun5.com/upload/attached/image/20200107/wyw_20200107164606.jpg" width="240" height="160" /></a><h2><a href="">邪门？行驶同段高速收费却大相径庭，记者暗访收费站结果令人心惊</a></h2><time>发布时间：2020-01-07</time></div></li>       <li>
+
+                        <li><div class="hou-k"><a href="http://www.weiyun5.com/article/detail?id=4360"><img src="http://www.weiyun5.com/upload/attached/image/20191223/wyw_20191223170040.jpg" width="240" height="160" /></a><h2><a href="">高速行驶下油被偷走？卡友：我车不停都能偷，你说你们多牛！</a></h2><time>发布时间：2019-12-23</time></div></li>       <li>
+
+                        <li><div class="hou-k"><a href="http://www.weiyun5.com/article/detail?id=4301"><img src="http://www.weiyun5.com/upload/attached/image/20191208/wyw_20191208163839.jpg" width="240" height="160" /></a><h2><a href="">【暗访视频】记者探访非法加油站，老板“发疯”：我要抓烂你的脸！</a></h2><time>发布时间：2019-12-08</time></div></li>       <li>
+
+                        <li><div class="hou-k"><a href="http://www.weiyun5.com/article/detail?id=4274"><img src="http://www.weiyun5.com/upload/attached/image/20191201/wyw_20191201165508.jpg" width="240" height="160" /></a><h2><a href="">“签字8万，不签字20万！”官方通报高速收天价施救费：3人被停职调查</a></h2><time>发布时间：2019-12-01</time></div></li>       <li>
+
+                    </ul>
+                </div>
+                <img class="mr_frBtnR next" src="http://www.weiyun5.com/resources/mall/images/hot-right.png" width="23" height="40" />
+            </div>
+        </div>
+    </div>
+
+    <!--友情链接-->
+    <div class="hot">
+        <div class="hot-tle">
+            <h1>友情链接</h1>
+            <span class="right">
+      <!-- <a href="">更多>></a> -->
+      </span></div>
+        <ul class="friend">
+
+
+            <li><a href="http://www.dyrhwl.com"><img src="http://www.weiyun5.com/upload/attached/image/20170220/wyw_20170220150952.jpg" width="224" height="94" /></a></li>
+
+
+
+            <li><a href="http://www.weishandong.com/"><img src="http://www.weiyun5.com/upload/attached/image/20170220/wyw_20170220145614.jpg" width="224" height="94" /></a></li>
+
+
+
+            <li><a href="http://www.dghgsc.com/"><img src="http://www.weiyun5.com/upload/attached/image/20170220/wyw_20170220150011.jpg" width="224" height="94" /></a></li>
+
+
+
+            <li><a href="http://www.zhaoyou.com/"><img src="http://www.weiyun5.com/upload/attached/image/20170220/wyw_20170220150321.jpg" width="224" height="94" /></a></li>
+
+
+
+            <li><a href="http://www.g-chemss.com/index.html"><img src="http://www.weiyun5.com/upload/attached/image/20170531/wyw_20170531140209.jpg" width="224" height="94" /></a></li>
+
+
+        </ul>
+    </div>
+</div>
+<div class="clear"></div>
+<!--底部-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--底部-->
+<footer>
+    <div class="footer">
+        <div class="foot1">
+            <div class="center relative">
+                <ul>
+                    <li><a href="http://www.weiyun5.com/">首页</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/carSource/index">车源信息</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/goodSource/index">货源信息</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/article/index">行业资讯</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/enterprise/index">企业展示</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/carServe/index">车辆服务</a><div class="line">|</div></li>
+                    <li><a href="http://www.weiyun5.com/about?type=about">关于我们</a></li>
+                </ul>
+                <p>联系电话：0546-6262766&nbsp;&nbsp; &nbsp; 信息咨询：0546-6262766&nbsp; &nbsp; &nbsp; 物流咨询：0546-6262766&nbsp; &nbsp;&nbsp;  传真：0546-6262766<br />
+                    在线QQ:983182232&nbsp;&nbsp; &nbsp; 邮箱:dyrenhe@126.com<br />
+                    ©2014-2017&nbsp;&nbsp; &nbsp; 承办企业：东营人和物流有限公司&nbsp;&nbsp; &nbsp; All Rights Reserved<br />
+                    地址：山东省东营市广饶县经济开发区</p>
+                <div class="erweima"><img src="http://www.weiyun5.com/resources/mall/images/erweima.jpg" width="127" height="126" /><span>关注微信公众号<br />
+快速找车、找货</span></div>
+            </div>
+        </div>
+        <div class="foot2">
+            <div class="center">
+                <p>备案信息：鲁ICP备13030353号-1</p>
+                <script type="text/javascript">
+                    var _hmt = _hmt || [];
+                    (function() {
+                        var hm = document.createElement("script");
+                        hm.src = "https://hm.baidu.com/hm.js?26870a68ef8e0499a9da867f5680699a";
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(hm, s);
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="main-im">
+        <div id="open_im" class="open-im"></div>
+        <div class="im_main" id="im_main">
+            <div id="close_im" class="close-im"><a href="javascript:void(0);" title="点击关闭"></a></div>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2665502892&site=qq&menu=yes" class="im-qq qq-a" title="在线QQ客服" target="_blank">
+                <div class="qq-container"></div>
+                <div class="qq-hover-c"><img class="img-qq" src="http://www.weiyun5.com/resources/mall/images/qq.png"></div>
+                <span> QQ在线咨询</span> </a>
+            <div class="im-tel">
+                <div>售前咨询热线</div>
+                <div class="tel-num">0546-6262766</div>
+                <div>服务时间</div>
+                <div class="tel-num">7x24小时</div>
+            </div>
+            <div class="im-footer" style="position:relative">
+                <div class="weixing-container">
+                    <div class="weixing-show">
+                        <div class="weixing-txt">手机扫一扫<br>下载安卓版APP</div>
+                        <img class="weixing-ma" src="http://www.weiyun5.com/resources/mall/images/weiyun5_android_v1.0.png">
+                        <div class="weixing-sanjiao"></div>
+                        <div class="weixing-sanjiao-big"></div>
+                    </div>
+                </div>
+                <div class="go-top"><a href="javascript:;" title="返回顶部"></a> </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('#close_im').bind('click',function(){
+                $('#main-im').css("height","0");
+                $('#im_main').hide();
+                $('#open_im').show();
+            });
+            $('#open_im').bind('click',function(e){
+                $('#main-im').css("height","272");
+                $('#im_main').show();
+                $(this).hide();
+            });
+            $('.go-top').bind('click',function(){
+                $(window).scrollTop(0);
+            });
+            $(".weixing-container").bind('mouseenter',function(){
+                $('.weixing-show').show();
+            })
+            $(".weixing-container").bind('mouseleave',function(){
+                $('.weixing-show').hide();
+            });
+        });
+    </script>
+</footer>
+<!--底部 end-->
+<!--底部 end-->
+</div>
+<!--banner-->
+<script type="text/javascript" src="http://www.weiyun5.com/resources/mall/js/banner.js"></script>
+<!--今日焦点-->
+<script src="http://www.weiyun5.com/resources/mall/js/jquery.orbit.min.js"></script>
+<script>
+
+    $(window).load(function() {
+
+        $('#featured').orbit({
+
+            bullets : true,
+
+            startClockOnMouseOut : true,
+
+            captionAnimation : 'slideOpen'
+
+        });
+
+    });
+
+</script>
+<!--热门视频-->
+<script language="javascript">
+    $(".mr_frUl ul li img").hover(function(){$(this).css("border-color","#A0C0EB");},function(){$(this).css("border-color","#d8d8d8")});
+    jQuery(".mr_frbox").slide({titCell:"",mainCell:".mr_frUl ul",autoPage:true,effect:"leftLoop",autoPlay:true,vis:4});
+</script>
+<script type="text/javascript">
+    $(document).ready(function($){
+        $(".hint-in3").click(function(event) {
+            $.ajax({
+                type:'post',
+                url:'http://www.weiyun5.com/checkOffer',
+                data:$("#offer").serialize(),
+                success:function(data) {
+                    logining = false;
+                    if (data == "success") {
+                        $(".hint").css({"display":"none"});
+                        $(".box").css({"display":"none"});
+                        layer.alert("报价成功",function(index){layer.close(index);initList();});
+                    } else {
+                        var error = [];
+                        for (var key in data) {
+                            error.push(data[key] + "\n");
+                        }
+                        layer.alert(error.join(""));
+                    }
+                }
+            });
+        });
+
+        $(".hint3").click(function(event) {
+            $(this).parent().parent().css({"display":"none"});
+            $(".box").css({"display":"none"});
+        });
+
+        $(".tan-del").click(function() {
+            $(".hint").css({"display":"none"});
+            $(".box").css({"display":"none"});
+        });
+
+    });
+    function btn1(goodId){
+        var id='5164';
+        if(id==''){
+            layer.alert("请登录后操作");
+        }else{
+            $(".hint").css({"display":"block"});
+            $(".box").css({"display":"block"});
+            $("#goodId").val(goodId);
+        }
+    }
+    function addGoodSource(){
+        $.ajax({
+            type:'post',
+            url:'http://www.weiyun5.com/foreground/goodSource/checkGoodSource?fast=fast',
+            data:$("#addGoodSource").serialize(),
+            success:function(data) {
+                logining = false;
+                if (data == "success") {
+                    layer.alert("增加货源信息成功",function(index){layer.close(index);top.window.location.href = "http://www.weiyun5.com/";});
+                } else {
+                    var error = [];
+                    for (var key in data) {
+                        error.push(data[key] + "\n");
+                    }
+                    if(data=="no login"){
+                        layer.alert("请登录后操作");
+                    }else{
+                        layer.alert(error.join(""));
+                    }
+                }
+            }
+        });
+    }
+    function addCarSource(){
+        $.ajax({
+            type:'post',
+            url:'http://www.weiyun5.com/foreground/carSource/checkCarSource?fast=fast',
+            data:$("#addCarSource").serialize(),
+            success:function(data) {
+                logining = false;
+                if (data == "success") {
+                    layer.alert("增加车源信息成功",function(index){layer.close(index);top.window.location.href = "http://www.weiyun5.com/";});
+                } else {
+                    var error = [];
+                    for (var key in data) {
+                        error.push(data[key] + "\n");
+                    }
+                    if(data=="no login"){
+                        layer.alert("请登录后操作");
+                    }else{
+                        layer.alert(error.join(""));
+                    }
+                }
+            }
+        });
+    }
+</script>
+</body>
 </html>

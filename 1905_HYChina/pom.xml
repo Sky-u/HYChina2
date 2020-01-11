@@ -21,6 +21,8 @@
         <module>hy_user_server</module>
         <module>hy_log_server</module>
         <module>hy_sms</module>
+        <module>hy_auth_server</module>
+        <module>hy_auth_center</module>
 
     </modules>
 
