@@ -1,19 +1,20 @@
-package com.syc.china.dto;
+package com.syc.china.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author 汪梦瑶
- * @create  2020-01-11 15:26
+ * @create  2020-01-13 16:20
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class CompanyInfoDto {
+@Table(name = "hy_company_info")
+public class CompanyInfo {
 
-    private String company; //公司名称
+    @Id
+    private Long userId;
 
     private String website;  //公司网址
 
@@ -44,4 +45,5 @@ public class CompanyInfoDto {
     private String route;  //长跑路线
 
     private String companyIntroduction;  //公司介绍
+
 }

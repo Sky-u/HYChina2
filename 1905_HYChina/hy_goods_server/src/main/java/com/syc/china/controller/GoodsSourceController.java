@@ -53,10 +53,11 @@ public class GoodsSourceController {
 
     //新增货源信息
     @PostMapping("/insert")
-    public ResponseEntity<Void> insertOne(@RequestBody GoodsSource goodsSource){
-
-        goodsSourceService.insert(goodsSource);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<Boolean> insertOne( GoodsSource goodsSource){
+        System.out.println(goodsSource);
+        Boolean result = goodsSourceService.insert(goodsSource);
+        System.out.println(result);
+        return ResponseEntity.ok(result);
     }
 
     //删除单个货源信息

@@ -2,6 +2,7 @@ package com.syc.china.controller;
 
 import com.syc.china.pojo.User;
 import com.syc.china.pojo.UserDetail;
+import com.syc.china.service.UserDetailService;
 import com.syc.china.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserDetailService userDetailService;
 
 
     /**
@@ -92,6 +96,39 @@ public class UserController {
         return ResponseEntity.ok(null);
 
     }
+
+
+    /**
+     * 根据id查询userDetail
+     * @param id
+     * @return
+     */
+    @GetMapping("/getUser/{id}")
+    public ResponseEntity<UserDetail> getUserInfoByUserId(@PathVariable("id") Long id){
+        UserDetail userDetail=userDetailService.getUserInfoByUserId(id);
+        System.out.println(userDetail);
+        return ResponseEntity.ok(userDetail);
+    }
+
+
+    /**
+     * 修改用户信息
+     * @param id
+     * @return
+     */
+    @PutMapping("/updateUserInfo/{id}")
+    public ResponseEntity<Void> updateUserInfo(@PathVariable("id") Long id){
+        System.out.println(id);
+        userDetailService.updateUserInfo(id);
+        return ResponseEntity.ok(null);
+    }
+
+
+
+
+
+
+
 
 
 

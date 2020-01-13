@@ -2,6 +2,7 @@ package com.syc.china.pojo;
 
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,9 +21,16 @@ public class GoodsSource {
     private Long id;
     private Long userId;
     private Integer goodsType;
+    private String goodsName;
+    private String people;
+    private Long phone;
     private Integer weight;
+    private Long cost;
     private String startPlace;
     private String endPlace;
-    private Long cost;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date startTime;
     private Date createTime;
+    private Date loadTime;
+
 }

@@ -18,7 +18,7 @@ public interface CarSourceService  {
 
     Boolean deleteCarSource(Long id);
 
-    void addCarSource(CarSource carSource);
+    Boolean addCarSource(CarSource carSource);
 
     Boolean updateCarSource(CarSource carSource);
 

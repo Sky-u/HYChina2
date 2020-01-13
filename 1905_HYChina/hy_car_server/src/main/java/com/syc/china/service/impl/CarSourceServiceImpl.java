@@ -68,9 +68,10 @@ public class CarSourceServiceImpl implements CarSourceService {
     }
 
     @Override
-    public void addCarSource(CarSource carSource) {
+    public Boolean addCarSource(CarSource carSource) {
         carSource.setCreateTime(new Date());
-       carSourceMapper.insertSelective(carSource);
+        int i = carSourceMapper.insertSelective(carSource);
+        return i>0? true:false;
 
     }
 

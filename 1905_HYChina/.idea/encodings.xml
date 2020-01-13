@@ -5,8 +5,8 @@
     <file url="file://$PROJECT_DIR$/hy_auth_center" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hy_auth_center/hy_auth_common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hy_auth_center/hy_auth_server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hy_auth_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hy_business" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hy_cache" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hy_car_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hy_commons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hy_config_conter" charset="UTF-8" />

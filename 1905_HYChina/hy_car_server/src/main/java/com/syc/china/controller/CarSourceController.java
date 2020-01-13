@@ -59,9 +59,11 @@ public class CarSourceController {
 
     //发布车源信息
     @PostMapping("/insert")
-    public ResponseEntity<Void> addCarSource(@RequestBody CarSource carSource){
-        carSourceService.addCarSource(carSource);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<Boolean> addCarSource(CarSource carSource){
+        System.out.println(carSource);
+        Boolean reslut = carSourceService.addCarSource(carSource);
+        System.out.println(reslut);
+        return ResponseEntity.ok(reslut);
     }
 
     //删除车源信息

@@ -39,10 +39,11 @@ public class GoodsSourceService {
 
     }
 
-    public void insert(GoodsSource goodsSource) {
+    public Boolean insert(GoodsSource goodsSource) {
         try {
             goodsSource.setCreateTime(new Date());
-            goodsSourceMapper.insert(goodsSource);
+            int i = goodsSourceMapper.insert(goodsSource);
+            return i>0? true:false;
         }catch (Exception e){
             throw new HyException(ExceptionEnums.UNKNOWN_ERROR);
         }
