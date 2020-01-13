@@ -1,2 +1,13 @@
+cache:
+  default-exp: 3600
 server:
   port: 8766
+
+spring:
+  redis:
+    database: 0
+    host: 192.168.254.111
+    port: 6379
+
+  cache:
+    type: redis

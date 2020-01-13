@@ -8,6 +8,7 @@ import com.syc.china.mapper.GoodsSourceMapper;
 import com.syc.china.pojo.GoodsSource;
 import com.syc.china.vo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -22,6 +23,8 @@ public class GoodsSourceService {
     @Autowired
     private GoodsSourceMapper goodsSourceMapper;
 
+
+    @Cacheable(value = "goods",key = "#id")
     public GoodsSource queryById(Long id) {
         return goodsSourceMapper.selectByPrimaryKey(id);
     }

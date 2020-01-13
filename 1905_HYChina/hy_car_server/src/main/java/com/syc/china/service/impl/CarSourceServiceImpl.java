@@ -10,6 +10,7 @@ import com.syc.china.pojo.CarSource;
 import com.syc.china.service.CarSourceService;
 import com.syc.china.vo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -28,6 +29,7 @@ public class CarSourceServiceImpl implements CarSourceService {
     @Autowired
     private CarSourceMapper carSourceMapper;
 
+
     @Override
     public PageResult<CarSource> queryCarSourceByPage(Integer page, Integer rows) {
         PageHelper.startPage(page-1, Math.min(rows, 100));
@@ -43,6 +45,9 @@ public class CarSourceServiceImpl implements CarSourceService {
         return pages;
     }
 
+
+
+    @Cacheable(value = "car",key = "#userId")
     @Override
     public PageResult<CarSource> queryByUserId(Long userId, Integer page, Integer rows) {
 
@@ -61,6 +66,8 @@ public class CarSourceServiceImpl implements CarSourceService {
         return pages;
     }
 
+
+    @Cacheable(value = "car",key = "#id",unless = "#result eq null")
     @Override
     public CarSource queryCarSourceById(Long id) {
         CarSource carSource = carSourceMapper.selectByPrimaryKey(id);

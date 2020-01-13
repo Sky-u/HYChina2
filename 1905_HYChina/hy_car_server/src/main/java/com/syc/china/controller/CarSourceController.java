@@ -55,7 +55,7 @@ public class CarSourceController {
         CarSource carSource = carSourceService.queryCarSourceById(id);
 
         return  ResponseEntity.ok(carSource);
-    };
+    }
 
     //发布车源信息
     @PostMapping("/insert")
